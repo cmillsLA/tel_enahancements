@@ -1,0 +1,1247 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 9 ]>    <html class="lt-ie9 no-js"  lang="en" dir="ltr"> <![endif]-->
+<!--[if gte IE 9]><!--> <html class="no-js"  lang="en" dir="ltr" > <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+<script>var _sf_startpt=(new Date()).getTime();</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgYHVlBXGwIDUFRbAQQC"};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];n.exports=u;var y=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(m,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="shortcut icon" href="http://www.telemundo.com/sites/nbcutelemundo/themes/aurora_tlmd/favicon.ico" />
+<meta name="tp:EnableExternalController" content="true" />
+<meta property="fb:pages" content="99881661864" />
+<!--[if lte IE 9]><script src="http://www.telemundo.com/sites/nbcutelemundo/themes/aurora_tlmd/js/bower/media.match.min.js" />
+</script><![endif]--><meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="http://www.telemundo.com/" />
+<link rel="shortlink" href="http://www.telemundo.com/" />
+<meta property="og:site_name" content="Telemundo" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.telemundo.com/" />
+<meta property="og:title" content="Telemundo" />
+<meta property="og:description" content="Novelas, Shows, Deportes y Entretenimiento" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="http://www.telemundo.com/" />
+<meta name="twitter:title" content="Telemundo" />
+<meta name="twitter:description" content="Novelas, Shows, Deportes y Entretenimiento" />
+    <title>Telemundo | Novelas, Shows, Deportes y Entretenimiento</title>
+
+    <link rel="stylesheet" href="http://www.telemundo.com/sites/nbcutelemundo/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" />
+<link rel="stylesheet" href="http://www.telemundo.com/sites/nbcutelemundo/files/css/css_9iRctKQ5jG1qolalZT8pG3WHVnTm_ExeHQDOu7cxA0s.css" />
+<link rel="stylesheet" href="http://www.telemundo.com/sites/nbcutelemundo/files/css/css_fANJ-9LaT-vFqptPY7pPC8fQA-RC_7B0R1k0l87faYY.css" />
+<link rel="stylesheet" href="http://www.telemundo.com/sites/nbcutelemundo/files/css/css_0vPIePyZ2v0kLQWh8qsoIJ3cb8f4jPAMyCEmKqPQjlA.css" />
+<link rel="stylesheet" href="http://www.telemundo.com/sites/nbcutelemundo/files/css/css_RBL-amQNqZKPSLd8-108yAQOiFnfTpyWhH6MMyWWYsU.css" />
+    <script>/* Modernizr 2.8.3 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-fontface-borderimage-cssanimations-csscolumns-cssgradients-csstransforms-csstransforms3d-csstransitions-history-svg-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-css_calc-load
+ */
+;window.Modernizr=function(a,b,c){function A(a){j.cssText=a}function B(a,b){return A(m.join(a+";")+(b||""))}function C(a,b){return typeof a===b}function D(a,b){return!!~(""+a).indexOf(b)}function E(a,b){for(var d in a){var e=a[d];if(!D(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function F(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:C(f,"function")?f.bind(d||b):f}return!1}function G(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+o.join(d+" ")+d).split(" ");return C(b,"string")||C(b,"undefined")?E(e,b):(e=(a+" "+p.join(d+" ")+d).split(" "),F(e,b,c))}var d="2.8.3",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m=" -webkit- -moz- -o- -ms- ".split(" "),n="Webkit Moz O ms",o=n.split(" "),p=n.toLowerCase().split(" "),q={svg:"http://www.w3.org/2000/svg"},r={},s={},t={},u=[],v=u.slice,w,x=function(a,c,d,e){var f,i,j,k,l=b.createElement("div"),m=b.body,n=m||b.createElement("body");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:h+(d+1),l.appendChild(j);return f=["&#173;",'<style id="s',h,'">',a,"</style>"].join(""),l.id=h,(m?l:n).innerHTML+=f,n.appendChild(l),m||(n.style.background="",n.style.overflow="hidden",k=g.style.overflow,g.style.overflow="hidden",g.appendChild(n)),i=c(l,a),m?l.parentNode.removeChild(l):(n.parentNode.removeChild(n),g.style.overflow=k),!!i},y={}.hasOwnProperty,z;!C(y,"undefined")&&!C(y.call,"undefined")?z=function(a,b){return y.call(a,b)}:z=function(a,b){return b in a&&C(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=v.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(v.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(v.call(arguments)))};return e}),r.history=function(){return!!a.history&&!!history.pushState},r.borderimage=function(){return G("borderImage")},r.cssanimations=function(){return G("animationName")},r.csscolumns=function(){return G("columnCount")},r.cssgradients=function(){var a="background-image:",b="gradient(linear,left top,right bottom,from(#9f9),to(white));",c="linear-gradient(left top,#9f9, white);";return A((a+"-webkit- ".split(" ").join(b+a)+m.join(c+a)).slice(0,-a.length)),D(j.backgroundImage,"gradient")},r.csstransforms=function(){return!!G("transform")},r.csstransforms3d=function(){var a=!!G("perspective");return a&&"webkitPerspective"in g.style&&x("@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}",function(b,c){a=b.offsetLeft===9&&b.offsetHeight===3}),a},r.csstransitions=function(){return G("transition")},r.fontface=function(){var a;return x('@font-face {font-family:"font";src:url("https://")}',function(c,d){var e=b.getElementById("smodernizr"),f=e.sheet||e.styleSheet,g=f?f.cssRules&&f.cssRules[0]?f.cssRules[0].cssText:f.cssText||"":"";a=/src/i.test(g)&&g.indexOf(d.split(" ")[0])===0}),a},r.svg=function(){return!!b.createElementNS&&!!b.createElementNS(q.svg,"svg").createSVGRect};for(var H in r)z(r,H)&&(w=H.toLowerCase(),e[w]=r[H](),u.push((e[w]?"":"no-")+w));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)z(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},A(""),i=k=null,function(a,b){function l(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function m(){var a=s.elements;return typeof a=="string"?a.split(" "):a}function n(a){var b=j[a[h]];return b||(b={},i++,a[h]=i,j[i]=b),b}function o(a,c,d){c||(c=b);if(k)return c.createElement(a);d||(d=n(c));var g;return d.cache[a]?g=d.cache[a].cloneNode():f.test(a)?g=(d.cache[a]=d.createElem(a)).cloneNode():g=d.createElem(a),g.canHaveChildren&&!e.test(a)&&!g.tagUrn?d.frag.appendChild(g):g}function p(a,c){a||(a=b);if(k)return a.createDocumentFragment();c=c||n(a);var d=c.frag.cloneNode(),e=0,f=m(),g=f.length;for(;e<g;e++)d.createElement(f[e]);return d}function q(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return s.shivMethods?o(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+m().join().replace(/[\w\-]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(s,b.frag)}function r(a){a||(a=b);var c=n(a);return s.shivCSS&&!g&&!c.hasCSS&&(c.hasCSS=!!l(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),k||q(a,c),a}var c="3.7.0",d=a.html5||{},e=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,f=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,g,h="_html5shiv",i=0,j={},k;(function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",g="hidden"in a,k=a.childNodes.length==1||function(){b.createElement("a");var a=b.createDocumentFragment();return typeof a.cloneNode=="undefined"||typeof a.createDocumentFragment=="undefined"||typeof a.createElement=="undefined"}()}catch(c){g=!0,k=!0}})();var s={elements:d.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video",version:c,shivCSS:d.shivCSS!==!1,supportsUnknownElements:k,shivMethods:d.shivMethods!==!1,type:"default",shivDocument:r,createElement:o,createDocumentFragment:p};a.html5=s,r(b)}(this,b),e._version=d,e._prefixes=m,e._domPrefixes=p,e._cssomPrefixes=o,e.testProp=function(a){return E([a])},e.testAllProps=G,e.testStyles=x,e.prefixed=function(a,b,c){return b?G(a,b,c):G(a,"pfx")},g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+u.join(" "):""),e}(this,this.document),function(a,b,c){function d(a){return"[object Function]"==o.call(a)}function e(a){return"string"==typeof a}function f(){}function g(a){return!a||"loaded"==a||"complete"==a||"uninitialized"==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){("c"==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&&g(l.readyState)&&(u.r=o=1,!q&&h(),l.onload=l.onreadystatechange=null,b)){"img"!=a&&m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&&y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&&(r=1,y[c]=[]),"object"==a?l.data=c:(l.src=c,l.type=a),l.width=l.height="0",l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),"img"!=a&&(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||"j",e(a)?i("c"==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&&h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName("script")[0],o={}.toString,p=[],q=0,r="MozAppearance"in l.style,s=r&&!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&&"[object Opera]"==o.call(a.opera),l=!!b.attachEvent&&!l,u=r?"object":l?"script":"img",v=l?"script":u,w=Array.isArray||function(a){return"[object Array]"==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&&(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split("!"),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f<d;f++)g=a[f].split("="),(e=z[g.shift()])&&(c=e(c,g));for(f=0;f<b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(".").pop().split("?").shift(),i.bypass||(e&&(e=d(e)?e:e[a]||e[g]||e[a.split("/").pop().split("?")[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&&"css"==i.url.split(".").pop().split("?").shift()?"c":c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&&f.load(function(){k(),e&&e(i.origUrl,h,g),j&&j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return b}(),a)a.hasOwnProperty(n)&&(!c&&!--m&&(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&&a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&&l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&&c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i<a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&&h(j,l);else Object(a)===a&&h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&&b.addEventListener&&(b.readyState="loading",b.addEventListener("DOMContentLoaded",A=function(){b.removeEventListener("DOMContentLoaded",A,0),b.readyState="complete"},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement("script"),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&&g(k.readyState)&&(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement("link"),j,c=i?h:c||f;e.href=a,e.rel="stylesheet",e.type="text/css";for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))},Modernizr.addTest("csscalc",function(){var a="width:",b="calc(10px);",c=document.createElement("div");return c.style.cssText=a+Modernizr._prefixes.join(b+a),!!c.style.length});        Modernizr.load([
+          {
+            test: 'HTMLPictureElement' in window,
+            nope: ['/sites/nbcutelemundo/themes/aurora_tlmd/js/bower/picturefill.min.js']
+          }, 
+          {
+            test: 'console' in window,
+            nope: ['/sites/nbcutelemundo/themes/aurora_tlmd/js/bower/console-polyfill.min.js']
+          }
+        ]);</script>
+<script src="http://www.telemundo.com/sites/nbcutelemundo/files/js/js_yCD4X3pmZ1Jak0s1szCIP4AX-lJ-JMUREPiPZUL0AVg.js"></script>
+<script>var mpscall = {"site":"telemundo-web","path":"\/","title":"Home","is_content":"0","type":"other","cat":"home"}
+var mpsopts = {"host":"mps.nbcuni.com","updatecorrelator":"1"}
+var mps=mps||{};mps._ext=mps._ext||{};mps._adsheld=[];mps._queue=mps._queue||{};mps._queue.gptloaded=mps._queue.gptloaded||[];mps.__timer=Date.now();mps.__intcode="v2"; "function"!=typeof mps.getAd&&(mps.getAd=function(a){if("string"!=typeof a)return!1;var b="mps-getad-"+a.replace(/\W/g,"");mps._ext&&mps._ext.loaded||(mps._queue.gptloaded.push(function(){"function"==typeof mps._gptfirst&&mps._gptfirst();mps.insertAd("#"+b,a)}),mps._adsheld.push(a));return'<div id="'+b+'" class="mps-wrapper" data-mps-fill-slot="'+a+'"></div>'});(function(){head=document.head||document.getElementsByTagName("head")[0];mpsload=document.createElement("script");mpsload.src="//"+mpsopts.host+"/fetch/ext/load-"+mpscall.site+".js?nowrite=2";mpsload.id="mps-load";head.insertBefore(mpsload,head.firstChild)})();</script>
+<script src="http://www.telemundo.com/sites/nbcutelemundo/files/js/js_rpNSt_iz67BdUOiX-6hgAw47qD1B085wu6TXjJUA5Ok.js"></script>
+<script src="http://www.telemundo.com/sites/nbcutelemundo/files/js/js_4oJzXjne0pd2Am7V5os3dS7-dCmsw5JnIh6WvU-QZ84.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"aurora_tlmd","theme_token":"UinNMvg2QtnAKib6-ZmSn2ffaU2VPOCsSSfqkth8k0M","jquery_version":"1.8","css":{"modules\/system\/system.base.css":1,"modules\/field\/theme\/field.css":1,"modules\/search\/search.css":1,"sites\/nbcutelemundo\/modules\/contrib\/chartbeat\/chartbeat.css":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/css\/primary-style.css":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/css\/secondary-style.css":1,"sites\/nbcutelemundo\/modules\/custom\/tlmd_core\/css\/rubik.css":1},"js":{"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/episode-dropdown.js":1,"\/\/widget.clipix.com\/ScriptWidget.js?version=1.6\u0026counter=on\u0026iconType=61\u0026language=es\u0026shape=horizontal\u0026lightmode=on":1,"\/\/pdk.theplatform.com\/current\/pdk\/tpPdkController.js":1,"misc\/ajax.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/lib\/jquery.iosslider.min.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/lib\/enquire.min.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/lib\/emojify.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/tlmd-emojis.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/expand-content.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/lazy.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/nav.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/primary-nav.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/lightbox.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/scroll-top.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/tab-switch.js":1,"misc\/progress.js":1,"sites\/nbcutelemundo\/modules\/overrides\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"profiles\/publisher\/modules\/contrib\/ctools\/js\/ajax-responder.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/bower\/masonry.pkgd.min.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/masonry.js":1,"profiles\/publisher\/modules\/contrib\/gigya\/js\/gigya_sharebar.js":1,"sites\/nbcutelemundo\/modules\/custom\/tlmd_core\/views_load_more.js":1,"profiles\/publisher\/modules\/contrib\/views\/js\/base.js":1,"profiles\/publisher\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/dropdown.js":1,"sites\/nbcutelemundo\/modules\/custom\/tlmd_mpx\/javascript\/pdk_decorator.min.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/accordify.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/lib\/jquery.hc-sticky.min.js":1,"sites\/nbcutelemundo\/modules\/custom\/tlmd_mpx\/javascript\/tlmd_mpx_player.min.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/bower\/moment.min.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/dynamic-queue.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/static-left-rail.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/bower\/es.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/min\/program.js":1,"sites\/nbcutelemundo\/modules\/custom\/tlmd_ads\/javascript\/tlmd_ads_mps.min.js":1,"sites\/nbcutelemundo\/modules\/custom\/tlmd_analytics\/js\/tlmd_analytics.js":1,"sites\/nbcutelemundo\/modules\/custom\/tlmd_social\/javascript\/tlmd_social.js":1,"profiles\/publisher\/modules\/contrib\/gigya\/js\/gigya.js":1,"profiles\/publisher\/modules\/contrib\/gigya\/js\/gigya.behaviors.js":1,"profiles\/publisher\/modules\/contrib\/gigya\/js\/gigya_ratings.js":1,"profiles\/publisher\/modules\/contrib\/gigya\/js\/gigya_reactions.js":1,"sites\/nbcutelemundo\/modules\/overrides\/jquery_update\/js\/jquery_update.js":1,"sites\/nbcutelemundo\/modules\/overrides\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"0":1,"1":1,"sites\/nbcutelemundo\/modules\/overrides\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/lib\/jquery.lazyload.mod.min.js":1,"sites\/nbcutelemundo\/modules\/overrides\/embed_external\/js\/embed_external.js":1,"2":1,"sites\/nbcutelemundo\/modules\/contrib\/fb_instant_articles\/modules\/fb_instant_articles_display\/js\/admin.js":1,"sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/bower\/tap.min.js":1}},"chartbeat":{"uid":43949,"domain":"telemundo.com","useCanonical":true,"noCookies":false,"sections":"Mainsite"},"gigya":{"enabledProviders":"Facebook, Twitter","lang":"en","sessionExpiration":2000000,"connectWithoutLoginBehavior":"alwaysLogin","mv":"mayor","loginMode":"drupal_and_gigya"},"gigyaSharebars":[{"gigyaSharebar":{"ua":{"linkBack":"http:\/\/www.telemundo.com\/super-series\/2017\/05\/10\/la-querida-del-centauro-2-capitulo-10-yolanda-empieza-una-nueva-vida-con-el","title":"La Querida del Centauro 2, Cap\u00edtulo 10:\u00a0Yolanda empieza una nueva vida con El Centauro","description":"El Centauro se sale con la suya y tiene a Yolanda a su lado como quer\u00eda.\u00a0\n","imageBhev":"first","imageUrl":""},"shareButtons":"share","shortURLs":"never","containerID":"gigya-share","showCounts":"none","layout":"horizontal","wrap":"true"}},{"gigyaSharebar":{"ua":{"linkBack":"http:\/\/www.telemundo.com\/novelas\/2017\/05\/05\/guerra-de-idolos-capitulo-10-mateo-y-manara-se-dejan-llevar-por-la-pasion","title":"Guerra De \u00cddolos,\u00a0Cap\u00edtulo 10: Mateo y Manara se dejan llevar por la pasi\u00f3n","description":"El ensayo de Mateo y Manara termina en una noche de pasi\u00f3n\u00a0desenfrenada.\u00a0\n","imageBhev":"first","imageUrl":""},"shareButtons":"share","shortURLs":"never","containerID":"gigya-share--2","showCounts":"none","layout":"horizontal","wrap":"true"}},{"gigyaSharebar":{"ua":{"linkBack":"http:\/\/www.telemundo.com\/super-series\/2017\/05\/10\/el-capo-capitulo-26-el-capo-espera-ver-el-cadaver-de-su-hijo","title":"El Capo, Cap\u00edtulo 26: El Capo espera ver el cad\u00e1ver de su hijo","description":"Jos\u00e9 Vicente presiona a su esposa y su amante para ir a enterrar a JJ.\n","imageBhev":"first","imageUrl":""},"shareButtons":"share","shortURLs":"never","containerID":"gigya-share--3","showCounts":"none","layout":"horizontal","wrap":"true"}}],"views_load_more":{"ea3e9712b05d8d84559f53b4744781d7":{"view_name":"promotional_content","view_display_id":"home_sections_promos","selector":".__hub--tertiary .__masonry--content","content_selector":".__masonry--item","view_args":"","view_path":"home","view_base_path":null,"view_dom_id":"ea3e9712b05d8d84559f53b4744781d7","ajax_path":"http:\/\/www.telemundo.com\/views\/ajax","pager_element":0}},"views":{"ajax_path":"http:\/\/www.telemundo.com\/views\/ajax","ajaxViews":{"views_dom_id:ea3e9712b05d8d84559f53b4744781d7":{"view_name":"promotional_content","view_display_id":"home_sections_promos","view_args":"","view_path":"home","view_base_path":null,"view_dom_id":"ea3e9712b05d8d84559f53b4744781d7","pager_element":0}}},"emojify":{"folder":"\/sites\/nbcutelemundo\/themes\/aurora_tlmd\/js\/lib\/emojify\/images\/emoji"},"program_guide":{"url_pattern":"\/ajax\/program_guide\/feed\/block\/%year\/%month\/%day"},"tlmd_social":{"social_settings":{"bitly_key":"R_198338079499ae8a5d3ef50b9b9c7c72","bitly_login":"novelastelemundo","facebook_app_id":"1564797573774278","facebook_redirect_uri":"http:\/\/www.telemundo.com\/socialshare\/posted","fallback_title":"Home","is_node":false,"fallback_image":"http:\/\/www.telemundo.com\/sites\/nbcutelemundo\/themes\/aurora_tlmd\/images\/telemundo_logo.png"}}});</script>
+  </head>
+  <body class="html front not-logged-in no-sidebars page-home" >
+    <div id="skip-link">
+      <a href="#main" class="element-invisible element-focusable" role="link">Skip to main content</a>
+    </div>
+        <div class="content-wrapper--transition menu--wrapper--ad-enabled">
+    <img src="https://comcast.demdex.net/event?d_sid=4495360" width="0" height="0" />
+<!-- Components: Nav,  Type: Main -->
+<div class="__hub--global-nav-wrapper ">
+  <div class=" __hub--global-nav">
+    <div class="__hub--global-nav-inner">
+      <nav class="nav--MAIN">
+        <!-- menu state must be on .__hub--LANDING wrapper -->
+        <div class="nav--fade"></div>
+        <div class="nav--mobile">
+          <a href="#" class="nav--hamburger-toggle icon--menu"><span class="icon--text-fallback">Menu</span></a>
+          <a href="http://www.telemundo.com/" class="nav--logo-mobile-link"><img src="http://www.telemundo.com/sites/nbcutelemundo/themes/aurora_tlmd/images/Telemundo_logo_nav.png" alt="Small Red Telemundo Logo" title="Telemundo" /></a>
+          <span class="nav--page-name">Telemundo</span>
+          <a href="#" class="nav--schedule-toggle icon--schedule"><span class="icon--text-fallback">Schedule</span></a>
+        </div>
+        <div class="nav--menu">
+          <h2 class="nav--logo">
+            <a href="http://www.telemundo.com/" class="nav--logo-link icon--telemundo"><span class="icon--text-fallback">Telemundo</span></a>
+          </h2>
+          <ul class="nav--menu-bar"><li class="first expanded nav--menu-item"><a href="http://www.telemundo.com/novelas" title="" class="nav--menu-link">Series y Novelas</a>
+<ul class="nav--megamenu">
+    <li class="nav--megamenu-item">
+    <ul class="nav--megamenu-editorial-link-wrapper"><li class="nav--megamenu-editorial-item"><a href="http://www.telemundo.com/novelas/guerra-de-idolos" class="nav--megamenu-editorial-item-link">Guerra de Ídolos</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundo.com/novelas/gonul" class="nav--megamenu-editorial-item-link">Gonul </a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundo.com/novelas/sin-senos-si-hay-paraiso" class="nav--megamenu-editorial-item-link">Sin Senos Sí Hay Paraíso</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundo.com/novelas/la-dona" class="nav--megamenu-editorial-item-link">La Doña</a></li></ul>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/novelas/la-dona/videos/la-dona/videos-exclusivos/aracely-arambula-nos-cuenta-como-grabaron-el-rescate-de-altagracia-1131669" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/multifield/megamenu/2017/04/14/aracely-arambula-juan-rios-cantu-rescate-en-la-dona_0.jpg?itok=7cu9l0fT" />
+</a><a href="http://www.telemundo.com/novelas/la-dona/videos/la-dona/videos-exclusivos/aracely-arambula-nos-cuenta-como-grabaron-el-rescate-de-altagracia-1131669" class="nav--megamenu-promotional-title-link"><h3>LA DOÑA: Mira quién le salvó la vida a Altagracia </h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/novelas/2017/04/17/ya-salio-el-disco-de-la-primera-serie-musical-de-telemundo-guerra-de-idolos" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/mpx/2017/02/16/170216_3471870_Mira_el_trailer_oficial_de_Guerra_de_Idolos_.jpg?itok=hWhuEQWn" />
+</a><a href="http://www.telemundo.com/novelas/2017/04/17/ya-salio-el-disco-de-la-primera-serie-musical-de-telemundo-guerra-de-idolos" class="nav--megamenu-promotional-title-link"><h3>GUERRA DE ÍDOLOS: Descarga la música de la serie en tu plataforma favorita</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/novelas/la-dona/videos/la-dona/videos-exclusivos/detras-de-camaras-escenas-calientes-entre-jose-maria-galeano-y-vanessa-restrepo-en-la-dona-1126439" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/multifield/megamenu/2017/04/14/jose-maria-galeano-david-chocarro-pelea_0.jpg?itok=zIruqr0w" />
+</a><a href="http://www.telemundo.com/novelas/la-dona/videos/la-dona/videos-exclusivos/detras-de-camaras-escenas-calientes-entre-jose-maria-galeano-y-vanessa-restrepo-en-la-dona-1126439" class="nav--megamenu-promotional-title-link"><h3>LA DOÑA: Así se graban las peleas callejeras de la serie</h3></a>    </li>
+</ul>
+<ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundo.com/novelas" title="" class="nav--subnav-link">Inicio</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/novelas/capitulos" title="" class="nav--subnav-link">Capítulos</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/novelas/videos" title="" class="nav--subnav-link">Videos</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/novelas/mas-novelas" title="" class="nav--subnav-link">Más Novelas</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/novelas/club-de-novelas" class="nav--subnav-link">Club de Novelas</a></li>
+<li class="last leaf nav--subnav-item"><a href="http://www.telemundo.com/talentos" title="" class="nav--subnav-link">Nuestros Talentos</a></li></ul></li>
+<li class="expanded nav--menu-item"><a href="http://www.telemundo.com/super-series" title="" class="nav--menu-link">Súper Series</a>
+<ul class="nav--megamenu">
+    <li class="nav--megamenu-item">
+    <ul class="nav--megamenu-editorial-link-wrapper"><li class="nav--megamenu-editorial-item"><a href="http://www.telemundo.com/super-series/la-querida-del-centauro" class="nav--megamenu-editorial-item-link">La Querida del Centauro</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundo.com/super-series/el-senor-de-los-cielos" class="nav--megamenu-editorial-item-link">El Señor de los Cielos</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundo.com/super-series/el-capo" class="nav--megamenu-editorial-item-link">El Capo </a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundo.com/super-series/el-chema" class="nav--megamenu-editorial-item-link">El Chema</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundo.com/super-series/senora-acero" class="nav--megamenu-editorial-item-link">Señora Acero 3, La Coyote</a></li></ul>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/super-series/la-querida-del-centauro/videos/la-querida-del-centauro-temporada-2/videos-exclusivos/el-centauro-yo-nunca-estuve-muerto-estaba-de-parranda-en-la-querida-del-centeuaro-2-video-1152671" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/multifield/megamenu/2017/05/09/lqdc2_interview_centauroxfinity.jpg?itok=_b9B_SX4" />
+</a><a href="http://www.telemundo.com/super-series/la-querida-del-centauro/videos/la-querida-del-centauro-temporada-2/videos-exclusivos/el-centauro-yo-nunca-estuve-muerto-estaba-de-parranda-en-la-querida-del-centeuaro-2-video-1152671" class="nav--megamenu-promotional-title-link"><h3>El Centauro: “Yo nunca estuve muerto, estaba de parranda" en La Querida Del Centauro 2 (VIDEO)</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/super-series/2017/05/09/el-anhelo-de-gerardo-es-poder-ver-caer-de-nuevo-el-centauro-en-la-querida" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/mpx/2017/05/09/170509_3516246_Gerardo_____Mi_venganza_perfecta_seria_atrap.jpg?itok=At4pMlka" />
+</a><a href="http://www.telemundo.com/super-series/2017/05/09/el-anhelo-de-gerardo-es-poder-ver-caer-de-nuevo-el-centauro-en-la-querida" class="nav--megamenu-promotional-title-link"><h3>El anhelo de Gerardo es poder ver caer de nuevo a El Centauro en La Querida Del Centauro (VIDEO)</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/super-series/2017/05/09/que-borrarian-de-su-vida-los-personajes-de-la-querida-del-centauro-2-video" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/mpx/2017/05/09/170509_3516213_Yolanda___Los_momentos_que_vivi_en_la_carcel.jpg?itok=DcUt4BHU" />
+</a><a href="http://www.telemundo.com/super-series/2017/05/09/que-borrarian-de-su-vida-los-personajes-de-la-querida-del-centauro-2-video" class="nav--megamenu-promotional-title-link"><h3>¿Qué borrarían de su vida los personajes de La Querida Del Centauro 2? (VIDEO)</h3></a>    </li>
+</ul>
+<ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundo.com/super-series" title="" class="nav--subnav-link">Inicio</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/super-series/capitulos" title="" class="nav--subnav-link">Capítulos</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/super-series/videos" title="" class="nav--subnav-link">Videos </a></li>
+<li class="last leaf nav--subnav-item"><a href="http://www.telemundo.com/super-series/fotos" title="" class="nav--subnav-link">Fotos</a></li></ul></li>
+<li class="expanded nav--menu-item"><a href="http://www.telemundo.com/shows" title="" class="nav--menu-link">Shows</a>
+<ul class="nav--megamenu">
+    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/entretenimiento/2017/05/09/elizabeth-gutierrez-confeso-que-se-acomplejaba-por-ser-delgada" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/article/cover/2017/05/09/ely-gutierrez-0509.png?itok=bVoQLFEb" />
+</a><a href="http://www.telemundo.com/entretenimiento/2017/05/09/elizabeth-gutierrez-confeso-que-se-acomplejaba-por-ser-delgada" class="nav--megamenu-promotional-title-link"><h3>SUELTA LA SOPA: Elizabeth Gutiérrez confesó que se acomplejaba por ser delgada</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/entretenimiento/2017/04/25/los-escotes-mas-sexis-de-la-alfombra-de-los-premios-billboard-2017-fotos" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/promo/media_gallery/2017/04/27/escotes-premios-billboard2017_0.jpg?itok=hFiWklXU" />
+</a><a href="http://www.telemundo.com/entretenimiento/2017/04/25/los-escotes-mas-sexis-de-la-alfombra-de-los-premios-billboard-2017-fotos" class="nav--megamenu-promotional-title-link"><h3>PREMIOS BILLBOARD: Los escotes más sexis de la alfombra roja</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/entretenimiento/2017/05/11/luis-miguel-llego-un-acuerdo-con-exmanager-tras-demanda" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/promo/article/2017/05/11/luismiguel-0511.png?itok=NvhORK6w" />
+</a><a href="http://www.telemundo.com/entretenimiento/2017/05/11/luis-miguel-llego-un-acuerdo-con-exmanager-tras-demanda" class="nav--megamenu-promotional-title-link"><h3>Suelta la Sopa: Luis Miguel llegó a un acuerdo con exmánager tras demanda</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/shows/2017/01/31/su-amante-tuvo-sexo-con-un-cadaver-y-le-pego-una-bacteria-en-la-boca-video" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/promo/article/2017/01/31/sexocadaver.jpg?itok=w5kyX_6c" />
+</a><a href="http://www.telemundo.com/shows/2017/01/31/su-amante-tuvo-sexo-con-un-cadaver-y-le-pego-una-bacteria-en-la-boca-video" class="nav--megamenu-promotional-title-link"><h3>CASO CERRADO: Su amante tuvo sexo con un cadáver y le pegó una bactería en la boca (VIDEO)</h3></a>    </li>
+</ul>
+<ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundo.com/shows" title="" class="nav--subnav-link">INICIO</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/videos" title="" class="nav--subnav-link">VIDEOS </a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/un-nuevo-dia" class="nav--subnav-link">Un Nuevo Día</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/entretenimiento/suelta-la-sopa" class="nav--subnav-link">Suelta La Sopa</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/caso-cerrado" class="nav--subnav-link">Caso Cerrado</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/al-rojo-vivo" class="nav--subnav-link">Al Rojo Vivo</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/don-francisco-te-invita" class="nav--subnav-link">Don Francisco Te Invita</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/siempre-ninos" class="nav--subnav-link">Siempre Niños</a></li>
+<li class="last leaf nav--subnav-item"><a href="http://www.telemundo.com/entretenimiento/premios-billboard" class="nav--subnav-link">Premios Billboard</a></li></ul></li>
+<li class="expanded nav--menu-item"><a href="http://www.telemundo.com/entretenimiento" title="" class="nav--menu-link">Entretenimiento</a>
+<ul class="nav--megamenu">
+    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/entretenimiento/mvto" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/brand/synopsis/2017/01/25/08_mvto_640x418.jpg?itok=JmcFSz9t" />
+</a><a href="http://www.telemundo.com/entretenimiento/mvto" class="nav--megamenu-promotional-title-link"><h3>The MVTO: English, Spanish, or a little of both? If it’s music, movies or celebrities, we’re on it!</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/entretenimiento/el-pulso-via-mashable" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/08_elpulso_mashable_640x418.jpg?itok=sAL8itwe" />
+</a><a href="http://www.telemundo.com/entretenimiento/el-pulso-via-mashable" class="nav--megamenu-promotional-title-link"><h3>#ElPulso vía Mashable: todas las noticias, fotos, videos y las últimas novedades en tecnología y las redes sociales.</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/entretenimiento/fandango-cine" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/10_fandangocine_1920x1080_2.jpg?itok=boHpFiPB" />
+</a><a href="http://www.telemundo.com/entretenimiento/fandango-cine" class="nav--megamenu-promotional-title-link"><h3>Fandango Cine: todas las noticias del mundo del cine latino y Hollywood. Trailers de películas, estrenos y mucho más.</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/entretenimiento/suelta-la-sopa" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/10_sls_1920x1080v2.jpg?itok=a6GrjiU7" />
+</a><a href="http://www.telemundo.com/entretenimiento/suelta-la-sopa" class="nav--megamenu-promotional-title-link"><h3>Suelta la Sopa: últimas noticias, videos y fotos de famosos, espectáculo y farándula latina.</h3></a>    </li>
+</ul>
+<ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundo.com/entretenimiento/mvto" class="nav--subnav-link">The MVTO</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/entretenimiento/el-pulso-via-mashable" class="nav--subnav-link">#ElPulso</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/entretenimiento/2016/12/05/fandango-cine" title="" class="nav--subnav-link">Fandango Cine</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/entretenimiento/2016/12/05/billboard-en-espanol" title="" class="nav--subnav-link">Billboard en Español</a></li>
+<li class="last leaf nav--subnav-item"><a href="http://www.telemundo.com/entretenimiento/suelta-la-sopa" title="" class="nav--subnav-link">Suelta La Sopa</a></li></ul></li>
+<li class="expanded nav--menu-item"><a href="http://www.telemundo.com/videos" title="" class="nav--menu-link">Videos</a><ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundo.com/videos" title="" class="nav--subnav-link">Inicio</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/un-nuevo-dia/videos" title="" class="nav--subnav-link">Un Nuevo Día</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/entretenimiento/suelta-la-sopa/videos" title="" class="nav--subnav-link">Suelta La Sopa</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/al-rojo-vivo/videos" title="" class="nav--subnav-link">Al Rojo Vivo</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/caso-cerrado/videos" title="" class="nav--subnav-link">caso cerrado</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/super-series/senora-acero/videos" title="" class="nav--subnav-link">Señora Acero 3</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/novelas/sin-senos-si-hay-paraiso/videos" title="" class="nav--subnav-link">Sin Senos Sí Hay Paraíso </a></li>
+<li class="last leaf nav--subnav-item"><a href="http://www.telemundo.com/novelas/silvana-sin-lana/videos" title="" class="nav--subnav-link">Silvana Sin Lana </a></li></ul></li>
+<li class="expanded nav--menu-item"><a href="http://www.telemundo.com/noticias" title="" class="nav--menu-link">Noticias</a>
+<ul class="nav--megamenu">
+    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/shows/2017/05/09/al-rojo-vivo-celebra-15-anos-en-el-aire" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/promo/video_clip/2014/10/31/maria_celeste.jpg?itok=X3i-geSy" />
+</a><a href="http://www.telemundo.com/shows/2017/05/09/al-rojo-vivo-celebra-15-anos-en-el-aire" class="nav--megamenu-promotional-title-link"><h3>Al Rojo Vivo celebra 15 años en el aire y rinden tributo en Nueva York</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/shows/al-rojo-vivo/videos/al-rojo-vivo/entretenimiento/juanes-revela-drama-familiar-que-vive-hace-20-anos-1152478" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/promo/video_clip/2017/05/08/juanes-dolor-hermana-en-coma.jpg?itok=QCTAvMp3" />
+</a><a href="http://www.telemundo.com/shows/al-rojo-vivo/videos/al-rojo-vivo/entretenimiento/juanes-revela-drama-familiar-que-vive-hace-20-anos-1152478" class="nav--megamenu-promotional-title-link"><h3>Juanes revela drama familiar que vive hace 20 años</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/shows/al-rojo-vivo/videos/al-rojo-vivo/curiosidades/clase-de-yoga-con-conejos-alivia-el-estres-1151790" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/gallery/2017/05/08/conejos.png?itok=R_8WOzr_" />
+</a><a href="http://www.telemundo.com/shows/al-rojo-vivo/videos/al-rojo-vivo/curiosidades/clase-de-yoga-con-conejos-alivia-el-estres-1151790" class="nav--megamenu-promotional-title-link"><h3>De moda clases de yoga con conejos para aliviar el estrés</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/shows/al-rojo-vivo/videos/al-rojo-vivo/america-latina/terapias-para-vencer-los-miedos-y-temores-en-los-ninos-1151740" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/gallery/2017/05/08/terapias.png?itok=mCZGkhZs" />
+</a><a href="http://www.telemundo.com/shows/al-rojo-vivo/videos/al-rojo-vivo/america-latina/terapias-para-vencer-los-miedos-y-temores-en-los-ninos-1151740" class="nav--megamenu-promotional-title-link"><h3>Terapias para vencer los miedos y temores en los niños</h3></a>    </li>
+</ul>
+<ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundo.com/noticias" title="" class="nav--subnav-link">Inicio</a></li>
+<li class="collapsed nav--subnav-item"><a href="http://www.telemundo.com/shows/al-rojo-vivo" title="" class="nav--subnav-link">Al rojo vivo</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" title="" class="nav--subnav-link">Noticias Telemundo</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/noticias/enfoque" class="nav--subnav-link">ENFOQUE</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/noticias/videos" title="" class="nav--subnav-link">Videos</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/noticias/fotos" title="" class="nav--subnav-link">Fotos</a></li>
+<li class="last leaf nav--subnav-item"><a href="http://www.telemundo.com/noticias/2017/03/14/consejos-de-inmigracion" class="nav--subnav-link">Inmigración</a></li></ul></li>
+<li class="expanded nav--menu-item"><a href="http://www.telemundodeportes.com" title="" target="_blank" class="nav--menu-link">Deportes</a>
+<ul class="nav--megamenu">
+    <li class="nav--megamenu-item">
+    <ul class="nav--megamenu-editorial-link-wrapper"><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/mexico" class="nav--megamenu-editorial-item-link" target="_blank">Liga MX</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/Mexico/Copa-MX" class="nav--megamenu-editorial-item-link" target="_blank">Copa MX</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/Ascenso-MX" class="nav--megamenu-editorial-item-link" target="_blank">Ascenso MX</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/concacaf-champions-league" class="nav--megamenu-editorial-item-link" target="_blank">Concachampions</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/MLS" class="nav--megamenu-editorial-item-link" target="_blank">MLS</a></li></ul>    <li class="nav--megamenu-item">
+    <ul class="nav--megamenu-editorial-link-wrapper"><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/centroamerica" class="nav--megamenu-editorial-item-link" target="_blank">Centroamérica</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/uefa-champions-league" class="nav--megamenu-editorial-item-link" target="_blank">Champions League</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/inglaterra" class="nav--megamenu-editorial-item-link" target="_blank">Inglaterra</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/espana" class="nav--megamenu-editorial-item-link" target="_blank">España</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.nbcdeportes.com/Alemania-Bundesliga" class="nav--megamenu-editorial-item-link" target="_blank">Alemania</a></li></ul>    <li class="nav--megamenu-item">
+    <ul class="nav--megamenu-editorial-link-wrapper"><li class="nav--megamenu-editorial-item"><a href="http://www.nbcdeportes.com/Europa/Italia" class="nav--megamenu-editorial-item-link" target="_blank">Italia</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.nbcdeportes.com/Europa/Francia-Ligue1" class="nav--megamenu-editorial-item-link" target="_blank">Francia</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/copa-libertadores" class="nav--megamenu-editorial-item-link" target="_blank">Copa Libertadores</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/Sudamerica/Argentina" class="nav--megamenu-editorial-item-link" target="_blank">Argentina</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/Sudamerica/Brasil" class="nav--megamenu-editorial-item-link" target="_blank">Brasil</a></li></ul>    <li class="nav--megamenu-item">
+    <ul class="nav--megamenu-editorial-link-wrapper"><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/Sudamerica/Colombia" class="nav--megamenu-editorial-item-link" target="_blank">Colombia</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/Sudamerica/Chile" class="nav--megamenu-editorial-item-link" target="_blank">Chile</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/sudamerica/uruguay" class="nav--megamenu-editorial-item-link" target="_blank">Uruguay</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/Sudamerica/Peru" class="nav--megamenu-editorial-item-link" target="_blank">Perú</a></li><li class="nav--megamenu-editorial-item"><a href="http://www.telemundodeportes.com/Sudamerica/Ecuador" class="nav--megamenu-editorial-item-link" target="_blank">Ecuador</a></li></ul>    </li>
+</ul>
+<ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/copa-fifa-confederaciones-rusia-2017" title="" class="nav--subnav-link" target="_blank">Copa Confederaciones</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/mexico" title="" class="nav--subnav-link" target="_blank">México</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/el-tri" title="" class="nav--subnav-link" target="_blank">El Tri</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/inglaterra" title="" class="nav--subnav-link" target="_blank">Inglaterra</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/espana" title="" class="nav--subnav-link" target="_blank">España</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/uefa-champions-league" title="" class="nav--subnav-link" target="_blank">Champions League</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/boxeo" title="" class="nav--subnav-link" target="_blank">Boxeo</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/Copa-Mundial-de-la-FIFA-Rusia-2018" title="" class="nav--subnav-link" target="_blank">FIFA</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/titulares-y-mas" title="" class="nav--subnav-link" target="_blank">Titulares y Más</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/envivo" title="" class="nav--subnav-link" target="_blank">En Vivo</a></li>
+<li class="last leaf nav--subnav-item"><a href="http://www.telemundodeportes.com/boxeo-telemundo" title="" class="nav--subnav-link" target="_blank">Boxeo Telemundo</a></li></ul></li>
+<li class="expanded nav--menu-item"><a href="http://www.telemundo.com/mujer-de-hoy" title="" class="nav--menu-link">Mujer</a>
+<ul class="nav--megamenu">
+    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-belleza-y-estilo" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/multifield/megamenu/2016/09/21/_bellezayestilo.jpg?itok=lUnyKVeX" />
+</a><a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-belleza-y-estilo" class="nav--megamenu-promotional-title-link"><h3>Belleza y estilo </h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-lifestyle" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/article/cover/2016/03/03/lifestyle.jpg?itok=s53OVfbO" />
+</a><a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-lifestyle" class="nav--megamenu-promotional-title-link"><h3>Lifestyle</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-amor-y-sexo" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/gallery/2016/06/15/amorysexo.jpg?itok=KA9XVyNn" />
+</a><a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-amor-y-sexo" class="nav--megamenu-promotional-title-link"><h3>Amor y Sexo</h3></a>    <li class="nav--megamenu-item">
+    <a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-familia" class="nav--megamenu-promotional-media-link" data-original=""><img class="nav--megamenu-promotional-media" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/megamenu_image_item/public/images/promo/article/2016/06/02/familia.jpg?itok=IZwiQAQK" />
+</a><a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-familia" class="nav--megamenu-promotional-title-link"><h3>Familia</h3></a>    </li>
+</ul>
+<ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundo.com/mujer-de-hoy" title="" class="nav--subnav-link">INICIO</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/belleza-y-estilo" title="" class="nav--subnav-link">BELLEZA Y ESTILO</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-amor-y-sexo" title="" class="nav--subnav-link">AMOR Y SEXO</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-lifestyle" title="" class="nav--subnav-link">LIFESTYLE</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/mujer-de-hoy/2016/08/08/mdh-familia" title="" class="nav--subnav-link">FAMILIA</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/mujer-de-hoy/recetas-divertidas" title="" class="nav--subnav-link">RECETAS DIVERTIDAS</a></li>
+<li class="last leaf nav--subnav-item"><a href="http://www.telemundo.com/mujer-de-hoy/belleza-y-estilo/videos/mujer-de-hoy/tiempo-para-mi" title="" class="nav--subnav-link">TIEMPO PARA MÍ</a></li></ul></li>
+<li class="expanded nav--menu-item"><a href="http://www.telemundo.com/el-poder-en-ti" title="" class="nav--menu-link">Comunidad</a><ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundo.com/el-poder-en-ti" title="" class="nav--subnav-link">Inicio</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/noticias/yo-decido-2016" class="nav--subnav-link">Yo Decido</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/el-poder-en-ti/tu-educacion" class="nav--subnav-link">Tu Educación</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/el-poder-en-ti/tu-salud" class="nav--subnav-link">Tu Salud</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/el-poder-en-ti/tu-dinero" class="nav--subnav-link">Tu Dinero</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/el-poder-en-ti/2016/07/07/your-education" title="" class="nav--subnav-link">Education</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/el-poder-en-ti/2016/07/07/your-health" title="" class="nav--subnav-link">Health</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/el-poder-en-ti/2016/05/10/your-money" title="" class="nav--subnav-link">Money</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/el-poder-en-ti/videos" title="" class="nav--subnav-link">Videos</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/el-poder-en-ti/fotos" title="" class="nav--subnav-link">Fotos</a></li>
+<li class="last leaf nav--subnav-item"><a href="https://www.redcross.org/telemundo" title="" class="nav--subnav-link" target="_blank">Ayuda en desastres</a></li></ul></li>
+<li class="expanded nav--menu-item"><a href="http://www.telemundo.com/" title="" class="nav--menu-link active">Más</a><ul class="nav--subnav"><li class="first leaf nav--subnav-item"><a href="http://www.telemundo.com/indice" title="" class="nav--subnav-link">Índice</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/telemundo-internacional/telemundo-internacional" class="nav--subnav-link">Telemundo Internacional</a></li>
+<li class="leaf nav--subnav-item"><a href="http://www.telemundo.com/estaciones" title="" class="nav--subnav-link">Estaciones</a></li>
+<li class="leaf nav--subnav-item"><a href="http://now.telemundo.com/" title="" class="nav--subnav-link" target="_blank">Telemundo Now</a></li>
+<li class="leaf nav--subnav-item"><a href="http://telemundo2.viewerlink.tv/?l=SP" title="" class="nav--subnav-link lightbox" target="_blank" data-iframe-url="http://telemundo2.viewerlink.tv/?l=SP" data-aux-class="tu-canal--iframe">Encuentra Tu Canal Local</a></li>
+<li class="last leaf nav--subnav-item"><a href="http://www.telemundo.com/shows/especiales-y-realities" class="nav--subnav-link">Especiales y realities</a></li></ul></li>
+<li class="last leaf nav--menu-item"><a href="http://telemundo2.viewerlink.tv/?l=SP" title="" target="_blank" class="nav--menu-link lightbox" data-iframe-url="http://telemundo2.viewerlink.tv/?l=SP" data-aux-class="tu-canal--iframe">Tu Canal</a></li>
+</ul>          <div class="nav--social-search">
+            <form class="search--MAIN" action="http://www.telemundo.com/search" _lpchecked="1">
+              <span class="search--container">
+                <input type="text" placeholder="Buscar" class="search--bar" name="keyword">
+                <button type="submit" class="search--submit icon--search"><span class="icon--text-fallback">Search</span>
+                </button>
+              </span>
+            </form>
+            <div class="nav--search-wrapper">
+              <button type="submit" class="nav--search-submit icon--search">
+              <span class="icon--text-fallback">Search</span></button>
+              <form action="http://www.telemundo.com/search" class="nav--search-bar">
+                <span class="nav--search-container">
+                  <input type="text" placeholder=" " class="nav--search" name="keyword">
+                  <button type="submit" class="nav--search-button"> BUSCAR </button>
+                </span>
+              </form>
+            </div>
+            <ul class="nav--social">
+              <li class="nav--social-item">
+                <a target="_blank" class="nav--social-link icon--nav-facebook" href="https://www.facebook.com/Telemundo" target="_blank"><span class="icon--text-fallback">Facebook</span></a>
+              </li>
+              <li class="nav--social-item">
+                <a target="_blank" class="nav--social-link icon--nav-twitter" href="https://twitter.com/telemundo" target="_blank"><span class="icon--text-fallback">Twitter</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav--sticky hidden"></div>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="__hub--mobile-program-guide">
+
+
+<!-- Components: Program-guide,  Type: Main -->
+
+<section class="program-guide--MAIN" >
+<h1 class="program-guide--main-title">Guía de Programación</h1>
+  <div class="program-guide--inner">
+    <div class="program-guide--days">
+      <h2 class="program-guide--title">
+        <span class="program-guide--title-text">Guía de Programación</span>
+      </h2>
+      <ul class="program-guide--days-menu">
+
+      </ul>
+      <a href="http://www.telemundo.com/guia-de-programacion" class="program-guide--program-more">Guía Completa</a>    </div>
+
+    <nav class="program-guide--nav">
+      <a href="#" class="program-guide--nav-prev icon--red-button"><span class="icon--text-fallback">previous</span></a>
+      <a href="#" class="program-guide--nav-next icon--red-button"><span class="icon--text-fallback">next</span></a>
+    </nav>
+
+    <div class="program-guide--program">
+      <div class="program-guide--program-slider">
+        <div class="program-guide--program-slider-inner">
+        </div>
+      </div>
+    </div>
+
+    <div class="program-guide--line"></div>
+  </div>
+  <a href="http://www.telemundo.com/guia-de-programacion" class="program-guide--more-button">Guía Completa</a></section></div>
+  <div class="main-content __hub--DEFAULT" data-menu-state="">
+
+          <div class="__hub--heading">
+        
+
+<div class="__hub--content"><div class="banner-sticky-bg"></div><div class="__hub--ad"><div class="__hub--ad-inner"><div class="ad--BANNER"><div data-mps-tag="topbanner"></div></div></div></div></div>      </div>
+    
+    <div class= "__hub--content">
+      <!--[if lte IE 8]>
+        <div class="message--BROWSER-WARNING">
+          <div class="base--STYLED">
+            <p>
+            Lo sentimos, pero Internet Explorer <![endif]-->
+            <!--[if IE 8]>8<![endif]--> <!--[if IE 7]>7<![endif]--> <!--[if IE 6]>6<![endif]-->
+             <!--[if lte IE 8]>no es compatible con tu sistema. <a href="http://windows.microsoft.com/es-es/internet-explorer/download-ie">Actualiza a la última version de Internet Explorer</a> para disfrutar de una Web más rápida y más segura.
+            </p>
+          </div>
+        </div>
+        <![endif]-->
+
+      <div class="tabs admin-tabs"></div>
+      
+
+            <main id="main" role="main">
+                  
+
+    
+          <div class="__hub--primary">
+        
+
+
+    <aside class="promotional-item--MAIN">
+  <div class="promotional-item--promoted-media">
+            <a href="http://www.telemundo.com/shows/2017/05/11/upfront-2017-18-telemundo-y-universo-redefinen-los-medios-hispanos-con-formatos"><picture><source srcset="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_lead_content/public/images/promo/article/2017/05/11/lrds2_upfront1920x10804.jpg?itok=Elyzs_2y" media="(min-width:960px)" /><source srcset="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_lead_content_medium/public/images/promo/article/2017/05/11/lrds2_upfront1920x10804.jpg?itok=KGg7S__0" media="(min-width:700px)" /><img srcset="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_lead_content_small/public/images/promo/article/2017/05/11/lrds2_upfront1920x10804.jpg?itok=bc-qUFY9"  class="promotional-item--promoted-image" /> </picture></a>    
+  </div>
+  <div class="promotional-item--pane">
+    <div class="promotional-item--meta-info">
+            <h2 class="promotional-item--show-title">
+        <a href="http://www.telemundo.com/shows/un-nuevo-dia" class="promotional-item--show-title-link" data-svg-content="true"><span class="promotional-item--show-title-text">Un Nuevo Día</span><img class="promotional-item--svg" src="http://www.telemundo.com/sites/nbcutelemundo/files/images/tv_show/logo/2016/10/20/07_unnuevodia_logo_whitepush.svg" /></a>      </h2>
+      
+      
+            <h6 class="promotional-item--content-type"><a href="http://www.telemundo.com/shows/2017/05/11/upfront-2017-18-telemundo-y-universo-redefinen-los-medios-hispanos-con-formatos" class="icon--article promotional-item--content-type-link"><span class="icon--text-fallback">Article</span></a></h6>
+      
+    </div>
+    <div class="promotional-item--content">
+      <h4><a href="http://www.telemundo.com/shows/2017/05/11/upfront-2017-18-telemundo-y-universo-redefinen-los-medios-hispanos-con-formatos" class="promotional-item--promoted-title">Telemundo anuncia nueva programación incluyendo el regreso de La Reina del Sur</a></h4>              <div class="promotional-item--promoted-description">
+            <a href="http://www.telemundo.com/shows/2017/05/11/upfront-2017-18-telemundo-y-universo-redefinen-los-medios-hispanos-con-formatos" class="promotional-item--promoted-description-link">En el 2018, Telemundo te trae las súper producciones de El Señor de los Cielos, La Reina del Sur 2, Señora Acero y las series biográficas de Luis Miguel, Selena y Nicky Jam.</a>        </div>
+          </div>
+  </div>
+</aside>
+
+
+
+
+
+      </div>
+    
+        <div class="__hub-wrapper">
+    
+
+          <div class="__hub--secondary">
+                <div class="__hub--secondary-visible">
+          <section class="__hub--secondary-item __hub--secondary-item-ad-inside">
+<div class="ad--MULTI"><div data-mps-tag="topmulti"></div></div></section>
+
+<section class="capitulos-list--MAIN">
+  <header class="title--SECTION odd">
+    <div class="title--inner">
+      <h2 class="title--title">Novelas</h2>
+    </div>
+  </header>
+  <h3 class="capitulos-list--main-title">Últimos Capítulos</h3>
+  <ul class="capitulos-list--container">
+          <li class="capitulos-list--item">
+      <a href="http://www.telemundo.com/super-series/2017/05/10/la-querida-del-centauro-2-capitulo-10-yolanda-empieza-una-nueva-vida-con-el" class="capitulos-list--media ratio-container-5x2"><img class="capitulos-list--image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/novelas_promoting_episodes_homepage/public/images/mpx/2017/05/10/170510_3517233_La_Querida_del_Centauro_2__Capitulo_10___Yol.jpg?itok=kpKY9zRr" width="600" height="240" alt="Ludwika Paleta en La Querida del Centauro" title="Ludwika Paleta en La Querida del Centauro" /><noscript><img class="capitulos-list--image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/novelas_promoting_episodes_homepage/public/images/mpx/2017/05/10/170510_3517233_La_Querida_del_Centauro_2__Capitulo_10___Yol.jpg?itok=kpKY9zRr" width="600" height="240" alt="Ludwika Paleta en La Querida del Centauro" title="Ludwika Paleta en La Querida del Centauro" /></noscript></a>    <div class="capitulos-list--content">
+    <span class="capitulos-list--main-icon"><i class="icon--video-camera"></i></span>
+          <h5 class="capitulos-list--section"><a href="http://www.telemundo.com/super-series/la-querida-del-centauro" class="capitulos-list--episode">La Querida del Centauro</a></h5>
+              <h3 class="capitulos-list--main-title"><a href="http://www.telemundo.com/super-series/2017/05/10/la-querida-del-centauro-2-capitulo-10-yolanda-empieza-una-nueva-vida-con-el" class="capitulos-list--episode-name">Capítulo 10</a></h3>
+              <h6 class="capitulos-list--tuning"><time  class="" datetime="2017-05-10"><span>Emitido:</span> Miércoles 05/10/17</time></h6>
+              <a href="http://www.telemundo.com/super-series/2017/05/10/la-querida-del-centauro-2-capitulo-10-yolanda-empieza-una-nueva-vida-con-el" class="capitulos-list--link-icon icon--red-button"><span class="icon--text-fallback">More<span></a>      </div>
+</li>
+          <li class="capitulos-list--item">
+      <a href="http://www.telemundo.com/novelas/2017/05/05/guerra-de-idolos-capitulo-10-mateo-y-manara-se-dejan-llevar-por-la-pasion" class="capitulos-list--media ratio-container-5x2"><img class="capitulos-list--image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/novelas_promoting_episodes_homepage/public/images/mpx/2017/05/05/170505_3514585_Guerra_De_Idolos___Capitulo_10__Mateo_y_Mana.jpg?itok=SWpAcz_X" width="600" height="240" alt="María León, Manara, Alberto Guerra, juntos, Guerra de Ídolos" title="María León, Manara, Alberto Guerra, abrazados, Guerra de Ídolos" /><noscript><img class="capitulos-list--image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/novelas_promoting_episodes_homepage/public/images/mpx/2017/05/05/170505_3514585_Guerra_De_Idolos___Capitulo_10__Mateo_y_Mana.jpg?itok=SWpAcz_X" width="600" height="240" alt="María León, Manara, Alberto Guerra, juntos, Guerra de Ídolos" title="María León, Manara, Alberto Guerra, abrazados, Guerra de Ídolos" /></noscript></a>    <div class="capitulos-list--content">
+    <span class="capitulos-list--main-icon"><i class="icon--video-camera"></i></span>
+          <h5 class="capitulos-list--section"><a href="http://www.telemundo.com/novelas/guerra-de-idolos" class="capitulos-list--episode">Guerra De Ídolos</a></h5>
+              <h3 class="capitulos-list--main-title"><a href="http://www.telemundo.com/novelas/2017/05/05/guerra-de-idolos-capitulo-10-mateo-y-manara-se-dejan-llevar-por-la-pasion" class="capitulos-list--episode-name">Capítulo 10</a></h3>
+              <h6 class="capitulos-list--tuning"><time  class="" datetime="2017-05-05"><span>Emitido:</span> Viernes 05/05/17</time></h6>
+              <a href="http://www.telemundo.com/novelas/2017/05/05/guerra-de-idolos-capitulo-10-mateo-y-manara-se-dejan-llevar-por-la-pasion" class="capitulos-list--link-icon icon--red-button"><span class="icon--text-fallback">More<span></a>      </div>
+</li>
+          <li class="capitulos-list--item">
+      <a href="http://www.telemundo.com/super-series/2017/05/10/el-capo-capitulo-26-el-capo-espera-ver-el-cadaver-de-su-hijo" class="capitulos-list--media ratio-container-5x2"><img class="capitulos-list--image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/novelas_promoting_episodes_homepage/public/images/mpx/2017/05/10/170510_3517223_El_Capo__Capitulo_26__El_Capo_espera_ver_el_.jpg?itok=Pts0ozH_" width="600" height="240" alt="Mauricio Islas, José Vicente, furioso, El Capo" title="Mauricio Islas, José Vicente, molesto, El Capo" /><noscript><img class="capitulos-list--image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/novelas_promoting_episodes_homepage/public/images/mpx/2017/05/10/170510_3517223_El_Capo__Capitulo_26__El_Capo_espera_ver_el_.jpg?itok=Pts0ozH_" width="600" height="240" alt="Mauricio Islas, José Vicente, furioso, El Capo" title="Mauricio Islas, José Vicente, molesto, El Capo" /></noscript></a>    <div class="capitulos-list--content">
+    <span class="capitulos-list--main-icon"><i class="icon--video-camera"></i></span>
+          <h5 class="capitulos-list--section"><a href="http://www.telemundo.com/super-series/el-capo" class="capitulos-list--episode">El Capo</a></h5>
+              <h3 class="capitulos-list--main-title"><a href="http://www.telemundo.com/super-series/2017/05/10/el-capo-capitulo-26-el-capo-espera-ver-el-cadaver-de-su-hijo" class="capitulos-list--episode-name">Capítulo 26</a></h3>
+              <h6 class="capitulos-list--tuning"><time  class="" datetime="2017-05-10"><span>Emitido:</span> Miércoles 05/10/17</time></h6>
+              <a href="http://www.telemundo.com/super-series/2017/05/10/el-capo-capitulo-26-el-capo-espera-ver-el-cadaver-de-su-hijo" class="capitulos-list--link-icon icon--red-button"><span class="icon--text-fallback">More<span></a>      </div>
+</li>
+      </ul>
+  <a href="http://www.telemundo.com/novelas/capitulos" class="additional-content--more-link">Ver Más</a></section>
+        </div>
+                        <div class="__hub--secondary-expandable" id="expandedContent" data-expanded="close">
+          <div class="__hub--secondary-expandable-content" data-expander-content>
+                  <div class="__hub--secondary-item">
+    <div class="dynamic-queue--REGULAR-V2">
+          <header class="title--SECTION even">
+        <div class="title--inner">
+          <h2 class="title--title">Don Francisco Te Invita </h2>
+        </div>
+      </header>
+        <div class="dynamic-queue--content-wrapper">
+      <div class="dynamic-queue--item">
+  <aside class="latest-content--FULL-WIDTH">
+    <div class="latest-content--media">
+      <a href="http://www.telemundo.com/shows/2017/05/07/don-francisco-te-invita-sandra-echeverria-habla-de-su-regreso-la-television-despues" class="ratio-container-277x157"><img class="" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dq_regular_v2/public/images/gallery/2017/05/07/dfti-31-sandra-echeverria-entrevista-don-francisco.jpg?itok=SnGIywOJ" width="596" height="390" alt="Sandra Echeverría en Don Francisco Te Invita" title="Sandra Echeverría en Don Francisco Te Invita" /><noscript><img class="" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dq_regular_v2/public/images/gallery/2017/05/07/dfti-31-sandra-echeverria-entrevista-don-francisco.jpg?itok=SnGIywOJ" width="596" height="390" alt="Sandra Echeverría en Don Francisco Te Invita" title="Sandra Echeverría en Don Francisco Te Invita" /></noscript></a>    </div>
+    <div class="latest-content--content">
+      <h4><a href="http://www.telemundo.com/shows/2017/05/07/don-francisco-te-invita-sandra-echeverria-habla-de-su-regreso-la-television-despues" class="latest-content--promotional-kicker">Don Francisco Te Invita</a></h4>
+      <div class="latest-content--promotional-title">
+        <h3><a href="http://www.telemundo.com/shows/2017/05/07/don-francisco-te-invita-sandra-echeverria-habla-de-su-regreso-la-television-despues">Sandra Echeverría habla de su regreso a la pantalla chica</a></h3>
+      </div>
+    </div>
+  </aside>
+</div>
+<div class="dynamic-queue--item">
+  <aside class="latest-content--FULL-WIDTH">
+    <div class="latest-content--media">
+      <a href="http://www.telemundo.com/shows/2017/05/07/el-grupo-musical-cnco-canta-hey-dj-en-don-francisco-te-invita-video" class="ratio-container-277x157"><img class="" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dq_regular_v2/public/images/gallery/2017/05/07/dfti-31-cnco-performance.jpg?itok=oV5B89e9" width="596" height="390" alt="CNCO cantando en Don Francisco Te Invita" title="CNCO cantando en Don Francisco Te Invita" /><noscript><img class="" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dq_regular_v2/public/images/gallery/2017/05/07/dfti-31-cnco-performance.jpg?itok=oV5B89e9" width="596" height="390" alt="CNCO cantando en Don Francisco Te Invita" title="CNCO cantando en Don Francisco Te Invita" /></noscript></a>    </div>
+    <div class="latest-content--content">
+      <h4><a href="http://www.telemundo.com/shows/2017/05/07/el-grupo-musical-cnco-canta-hey-dj-en-don-francisco-te-invita-video" class="latest-content--promotional-kicker">Don Francisco Te Invita</a></h4>
+      <div class="latest-content--promotional-title">
+        <h3><a href="http://www.telemundo.com/shows/2017/05/07/el-grupo-musical-cnco-canta-hey-dj-en-don-francisco-te-invita-video">¡A bailar con los chicos de CNCO!</a></h3>
+      </div>
+    </div>
+  </aside>
+</div>
+<div class="dynamic-queue--item">
+  <aside class="latest-content--FULL-WIDTH">
+    <div class="latest-content--media">
+      <a href="http://www.telemundo.com/shows/2017/05/07/don-francisco-te-invita-conocer-el-antes-y-despues-del-grupo-cnco-video" class="ratio-container-277x157"><img class="" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dq_regular_v2/public/images/gallery/2017/05/07/dfti-31-cnco-entrevista-don-francisco.jpg?itok=yWsrwGoa" width="596" height="390" alt="CNCO en Don Francisco Te Invita" title="CNCO en Don Francisco Te Invita" /><noscript><img class="" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dq_regular_v2/public/images/gallery/2017/05/07/dfti-31-cnco-entrevista-don-francisco.jpg?itok=yWsrwGoa" width="596" height="390" alt="CNCO en Don Francisco Te Invita" title="CNCO en Don Francisco Te Invita" /></noscript></a>    </div>
+    <div class="latest-content--content">
+      <h4><a href="http://www.telemundo.com/shows/2017/05/07/don-francisco-te-invita-conocer-el-antes-y-despues-del-grupo-cnco-video" class="latest-content--promotional-kicker">Don Francisco Te Invita</a></h4>
+      <div class="latest-content--promotional-title">
+        <h3><a href="http://www.telemundo.com/shows/2017/05/07/don-francisco-te-invita-conocer-el-antes-y-despues-del-grupo-cnco-video">Video: La historia de CNCO antes de la fama</a></h3>
+      </div>
+    </div>
+  </aside>
+</div>
+          </div>
+  </div>
+      </div>
+  
+
+    <section class="__hub--secondary-item">
+      <div class="dynamic-queue--REGULAR">
+         <header class="title--SECTION odd">
+        <div class="title--inner">
+          <h2 class="title--title">Entretenimiento</h2>
+        </div>
+      </header>
+    
+      <div class="dynamic-queue--content-wrapper">
+        <div class="dynamic-queue--item">
+  <aside class="latest-content--MAIN">
+    <div class="latest-content--media">
+      <a href="http://www.telemundo.com/entretenimiento/2017/05/11/el-enorme-miembro-de-jon-hamm-se-gano-el-titulo-de-hammaconda-fotos" class="ratio-container-40x31"><img class="latest-episode--promotional-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/images/promo/article/2017/05/11/jon-hamm-bulto.jpg?itok=2ACdmuvg" width="240" height="186" alt="Jon Hamm bulto" title="Jon Hamm bulto" /><noscript><img class="latest-episode--promotional-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/images/promo/article/2017/05/11/jon-hamm-bulto.jpg?itok=2ACdmuvg" width="240" height="186" alt="Jon Hamm bulto" title="Jon Hamm bulto" /></noscript></a>    </div>
+    <div class="latest-content--content">
+      <h4>
+                  <a href="http://www.telemundo.com/entretenimiento/mvto-en-espanol" class="latest-episode--show-name">MVTO en Español</a>              </h4>
+      <div class="latest-content--promotional-description">
+        <p>
+          <a href="http://www.telemundo.com/entretenimiento/2017/05/11/el-enorme-miembro-de-jon-hamm-se-gano-el-titulo-de-hammaconda-fotos" class="latest-episode--episode-number-link">Miembro de Jon Hamm ganó el título de “Hammaconda”</a>        </p>
+      </div>
+    </div>
+  </aside>
+</div><div class="dynamic-queue--item">
+  <aside class="latest-content--MAIN">
+    <div class="latest-content--media">
+      <a href="http://www.telemundo.com/entretenimiento/2017/05/11/este-genio-se-gano-un-auto-deportivo-de-lujo-con-tan-solo-enviar-un-tweet" class="ratio-container-40x31"><img class="latest-episode--promotional-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/images/article/cover/2017/05/11/artista-gana-auto-twitter.jpg?itok=bU2lySOa" width="240" height="186" alt="Se ganó un deportivo de lujo con tan solo enviar un tuit" title="Se ganó un deportivo de lujo con tan solo enviar un tuit" /><noscript><img class="latest-episode--promotional-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/images/article/cover/2017/05/11/artista-gana-auto-twitter.jpg?itok=bU2lySOa" width="240" height="186" alt="Se ganó un deportivo de lujo con tan solo enviar un tuit" title="Se ganó un deportivo de lujo con tan solo enviar un tuit" /></noscript></a>    </div>
+    <div class="latest-content--content">
+      <h4>
+                  <a href="http://www.telemundo.com/entretenimiento/el-pulso-via-mashable" class="latest-episode--show-name">#ElPulso vía Mashable</a>              </h4>
+      <div class="latest-content--promotional-description">
+        <p>
+          <a href="http://www.telemundo.com/entretenimiento/2017/05/11/este-genio-se-gano-un-auto-deportivo-de-lujo-con-tan-solo-enviar-un-tweet" class="latest-episode--episode-number-link">Obtuvo un deportivo de lujo con solo enviar un tweet</a>        </p>
+      </div>
+    </div>
+  </aside>
+</div><div class="dynamic-queue--item">
+  <aside class="latest-content--MAIN">
+    <div class="latest-content--media">
+      <a href="http://www.telemundo.com/entretenimiento/2017/05/11/suzy-cortez-comparte-sexy-foto-con-muy-poca-ropa-desde-un-avion-privado" class="ratio-container-40x31"><img class="latest-episode--promotional-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/images/promo/article/2017/05/11/suzy-cortez-sexy.jpg?itok=W25iwzPw" width="240" height="186" alt="Suzy Cortez  demasiado sexy" title="Suzy Cortez  demasiado sexy" /><noscript><img class="latest-episode--promotional-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/images/promo/article/2017/05/11/suzy-cortez-sexy.jpg?itok=W25iwzPw" width="240" height="186" alt="Suzy Cortez  demasiado sexy" title="Suzy Cortez  demasiado sexy" /></noscript></a>    </div>
+    <div class="latest-content--content">
+      <h4>
+                  <a href="http://www.telemundo.com/entretenimiento/mvto-en-espanol" class="latest-episode--show-name">MVTO en Español</a>              </h4>
+      <div class="latest-content--promotional-description">
+        <p>
+          <a href="http://www.telemundo.com/entretenimiento/2017/05/11/suzy-cortez-comparte-sexy-foto-con-muy-poca-ropa-desde-un-avion-privado" class="latest-episode--episode-number-link">Suzy Cortez comparte sexy foto con muy poca ropa</a>        </p>
+      </div>
+    </div>
+  </aside>
+</div>                  
+  <a href="http://www.telemundo.com/entretenimiento/premios-billboard/videos/musica-de-los-premios/presentaciones-de-premios-billboard/enrique-iglesias-y-pedro-fernandez-en-premios-billboard-2015-show-completo-video-714-876591" target="_blank" class="dynamic-queue--more-link"><span>ver más</span></a>              </div>
+    </div>
+    </section>
+  
+<section class="__hub--secondary-item">
+
+
+
+    <div data-embed-external="instagram">https://www.instagram.com/p/BT9h_JLFsDH/</div>
+
+
+
+
+
+</section>
+
+    <section class="__hub--secondary-item">
+      <div class="dynamic-queue--NEWS">
+
+        <header class="title--PLAIN-COLORED">
+      <div class="title--inner">
+        <h2 class="title--title">Noticias del Día</h2>
+      </div>
+    </header>
+    
+    <div class="dynamic-queue--content-wrapper">
+      <div class="dynamic-queue--item">
+  <article class="teaser--MAIN">
+    <a href="http://www.telemundo.com/noticias/2017/05/11/alertan-inmigrantes-y-cualquier-estadounidense-sobre-viajes-texas" class="teaser--link"><h3 class="teaser--title">Alertan a inmigrantes y a cualquier estadounidense sobre viajes a Texas</h3></a>    <p class="teaser--description">Un gran número de ciudadanos podría caer en el “perfil” para exigirle "mostrar sus papeles"
+</p>
+  </article>
+</div><div class="dynamic-queue--item">
+  <article class="teaser--MAIN">
+    <a href="http://www.telemundo.com/noticias/2017/05/11/trump-dice-que-comey-le-aseguro-que-el-no-era-investigado-en-caso-sobre-rusia-2" class="teaser--link"><h3 class="teaser--title">Trump dice que Comey le aseguró que él no era investigado en caso sobre Rusia</h3></a>    <p class="teaser--description">"Yo sé que no estoy bajo investigación, yo personalmente, no estoy hablando de las campañas", insistió el mandatario tras la respuesta que le dio el ex director del FBI</p>
+  </article>
+</div><div class="dynamic-queue--item">
+  <article class="teaser--MAIN">
+    <a href="http://www.telemundo.com/noticias/2017/05/11/eeuu-reducen-proteccion-para-ciertos-inmigrantes" class="teaser--link"><h3 class="teaser--title">EEUU: Reducen protección para ciertos inmigrantes</h3></a>    <p class="teaser--description">ICE no deportará a inmigrantes que están a la espera de una respuesta durante un lapso de hasta seis meses. Será posible extender este período por 90 días, pero solo una vez</p>
+  </article>
+</div>                  
+  <a href="http://www.telemundo.com/noticias" target="_blank" class="dynamic-queue--more-link"><span>ver más</span></a>            </div>
+    </div>
+    </section>
+  
+    <section class="__hub--secondary-item">
+      <div class="dynamic-queue--REGULAR">
+         <header class="title--SECTION even">
+        <div class="title--inner">
+          <h2 class="title--title">Deportes</h2>
+        </div>
+      </header>
+    
+      <div class="dynamic-queue--content-wrapper">
+        
+  <div class="dynamic-queue--item">
+  <aside class="latest-content--MAIN">
+    <div class="latest-content--media">
+      <a href="http://www.telemundodeportes.com/titulares-y-mas/video/telemundo-deportes-fue-premiado-con-dos-emmys" target="_blank"><img class="latest-episode--promotional-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/2017/05/tym_emmy_1920x1080_940202051565.jpg?itok=hqInL4kY" width="240" height="186" alt="Andrés Cantor" title="Andrés Cantor" /><noscript><img class="latest-episode--promotional-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/2017/05/tym_emmy_1920x1080_940202051565.jpg?itok=hqInL4kY" width="240" height="186" alt="Andrés Cantor" title="Andrés Cantor" /></noscript></a>    </div>
+    <div class="latest-content--content">
+      <h4>
+                  <span class="latest-content--promotional-kicker">EMMYS</span>
+              </h4>
+      <div class="latest-content--promotional-description">
+        <p>
+          <a href="http://www.telemundodeportes.com/titulares-y-mas/video/telemundo-deportes-fue-premiado-con-dos-emmys" target="_blank" class="latest-episode--episode-number-link">Telemundo Deportes fue premiado con dos Emmy</a>        </p>
+      </div>
+    </div>
+  </aside>
+</div>  <div class="dynamic-queue--item">
+  <aside class="latest-content--MAIN">
+    <div class="latest-content--media">
+      <a href="http://www.telemundodeportes.com/deporte-rosa/video/revelado-la-boda-de-lionel-messi-ya-tiene-fecha-y-lugar" target="_blank"><img class="latest-episode--promotional-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/2017/05/messi_antonella.jpg?itok=2ecwI8G8" width="240" height="186" alt="Messi" title="Messi" /><noscript><img class="latest-episode--promotional-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/2017/05/messi_antonella.jpg?itok=2ecwI8G8" width="240" height="186" alt="Messi" title="Messi" /></noscript></a>    </div>
+    <div class="latest-content--content">
+      <h4>
+                  <span class="latest-content--promotional-kicker">MESSI</span>
+              </h4>
+      <div class="latest-content--promotional-description">
+        <p>
+          <a href="http://www.telemundodeportes.com/deporte-rosa/video/revelado-la-boda-de-lionel-messi-ya-tiene-fecha-y-lugar" target="_blank" class="latest-episode--episode-number-link">¡Revelado! La boda de Lionel Messi ya tiene fecha y lugar </a>        </p>
+      </div>
+    </div>
+  </aside>
+</div>  <div class="dynamic-queue--item">
+  <aside class="latest-content--MAIN">
+    <div class="latest-content--media">
+      <a href="http://www.telemundodeportes.com/noticias/video/meten-preso-al-doble-de-messi-por-causar-caos-en-la-calle" target="_blank"><img class="latest-episode--promotional-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/2017/05/messi_iran.jpg?itok=I_Z7UDk7" width="240" height="186" alt="IRAN-FOOTBALL-MESSI" title="IRAN-FOOTBALL-MESSI" /><noscript><img class="latest-episode--promotional-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/additional_content/public/2017/05/messi_iran.jpg?itok=I_Z7UDk7" width="240" height="186" alt="IRAN-FOOTBALL-MESSI" title="IRAN-FOOTBALL-MESSI" /></noscript></a>    </div>
+    <div class="latest-content--content">
+      <h4>
+                  <span class="latest-content--promotional-kicker">FÚTBOL</span>
+              </h4>
+      <div class="latest-content--promotional-description">
+        <p>
+          <a href="http://www.telemundodeportes.com/noticias/video/meten-preso-al-doble-de-messi-por-causar-caos-en-la-calle" target="_blank" class="latest-episode--episode-number-link">Meten preso al doble de Messi por causar caos en la calle</a>        </p>
+      </div>
+    </div>
+  </aside>
+</div>              </div>
+    </div>
+    </section>
+  
+    <section class="__hub--secondary-item">
+      <div class="dynamic-queue--ACCORDION">
+              <header class="title--SECTION odd">
+          <div class="title--inner">
+            <h2 class="title--title">Shows</h2>
+          </div>
+        </header>
+            <div class="dynamic-queue--content-wrapper">
+        <div class="dynamic-queue--item expanded">
+  <h2 class="dynamic-queue--title">Lo que le sucedió a Wisin al escuchar la voz de su hija<span class="dynamic-queue--item-arrow"></span></h2>
+  <div class="dynamic-queue--container" style="overflow: hidden; display: block;">
+    <div class="media--DYNAMIC-QUEUE-ACCORDION">
+              <div class="media--media">
+          <a href="http://www.telemundo.com/shows/2017/05/11/lo-que-le-sucedio-wisin-al-escuchar-la-voz-de-su-hija" class="ratio-container-596x390"><img class="media--cover-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dynamic_queue_accordion/public/images/mpx/2017/05/11/170511_3517635_Lo_que_le_sucedio_a_Wisin_al_escuchar_la_voz.jpg?itok=yUc31ETu" width="592" height="386" /><noscript><img class="media--cover-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dynamic_queue_accordion/public/images/mpx/2017/05/11/170511_3517635_Lo_que_le_sucedio_a_Wisin_al_escuchar_la_voz.jpg?itok=yUc31ETu" width="592" height="386" /></noscript></a>        </div>
+                    <div class="media--content">
+          <div class="media--description">
+            <p>
+              <a href="http://www.telemundo.com/shows/2017/05/11/lo-que-le-sucedio-wisin-al-escuchar-la-voz-de-su-hija" class="media--link">El cantante vivió un momento emotivo durante la grabación del show de Don Francisco en Telemundo</a>            </p>
+          </div>
+        </div> 
+        </div> 
+  </div>
+</div>
+<div class="dynamic-queue--item ">
+  <h2 class="dynamic-queue--title">Se burlan de rapero por mentir en las redes sociales<span class="dynamic-queue--item-arrow"></span></h2>
+  <div class="dynamic-queue--container" style="">
+    <div class="media--DYNAMIC-QUEUE-ACCORDION">
+              <div class="media--media">
+          <a href="http://www.telemundo.com/shows/2017/05/11/se-burlan-de-rapero-por-mentir-en-las-redes-sociales" class="ratio-container-596x390"><img class="media--cover-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dynamic_queue_accordion/public/images/mpx/2017/05/11/170511_3517576_Se_burlan_de_rapero_por_mentir_en_las_redes_.jpg?itok=1mLCQjKF" width="592" height="386" /><noscript><img class="media--cover-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dynamic_queue_accordion/public/images/mpx/2017/05/11/170511_3517576_Se_burlan_de_rapero_por_mentir_en_las_redes_.jpg?itok=1mLCQjKF" width="592" height="386" /></noscript></a>        </div>
+                    <div class="media--content">
+          <div class="media--description">
+            <p>
+              <a href="http://www.telemundo.com/shows/2017/05/11/se-burlan-de-rapero-por-mentir-en-las-redes-sociales" class="media--link">El rapero Bow Wow publicó una foto sugiriendo que viajaba en un avión privado pero fue desmentido por otra foto publicada en Snapchat</a>            </p>
+          </div>
+        </div> 
+        </div> 
+  </div>
+</div>
+<div class="dynamic-queue--item ">
+  <h2 class="dynamic-queue--title">Latinas que podrían ser la próxima Miss USA 2017<span class="dynamic-queue--item-arrow"></span></h2>
+  <div class="dynamic-queue--container" style="">
+    <div class="media--DYNAMIC-QUEUE-ACCORDION">
+              <div class="media--media">
+          <a href="http://www.telemundo.com/shows/2017/05/11/latinas-que-podrian-ser-la-proxima-miss-usa-2017" class="ratio-container-596x390"><img class="media--cover-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dynamic_queue_accordion/public/images/promo/video_clip/2017/05/11/latinasmissusa.jpg?itok=h8DqcI_d" width="592" height="386" alt="Latinas que aspiran a ser Miss USA 2017" title="Latinas que aspiran a ser Miss USA 2017" /><noscript><img class="media--cover-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/dynamic_queue_accordion/public/images/promo/video_clip/2017/05/11/latinasmissusa.jpg?itok=h8DqcI_d" width="592" height="386" alt="Latinas que aspiran a ser Miss USA 2017" title="Latinas que aspiran a ser Miss USA 2017" /></noscript></a>        </div>
+                    <div class="media--content">
+          <div class="media--description">
+            <p>
+              <a href="http://www.telemundo.com/shows/2017/05/11/latinas-que-podrian-ser-la-proxima-miss-usa-2017" class="media--link">Varias jóvenes reinas de belleza aspiran a ser la representante de Estados Unidos en el concurso Miss Universo</a>            </p>
+          </div>
+        </div> 
+        </div> 
+  </div>
+</div>
+                     
+  <a href="http://www.telemundo.com/shows" target="_blank" class="dynamic-queue--more-link"><span>ver más</span></a>                </div>
+    </div>
+    </section>
+            </div>
+          <div class="load-more--EXPANDER" id="open-button">
+            <a href="#" class="load-more--close-link" data-scroll-target="[data-expanded]" data-action="close">cerrar</a>
+        <a href="#" class="load-more--link" data-action="open">
+            <span class="load-more--text">CARGAR MÁS CONTENIDO</span>
+            <span class="load-more--arrow-icon"></span>
+        </a>
+        <div class="load-more--arrow-wrapper">
+          <div class="load-more--arrow-down"></div>
+        </div>
+    </div>
+        </div>
+              </div>
+              <div class="__hub--tertiary">
+                          <div class="__masonry--MAIN"><div class="__masonry--content" data-masonry-breakpoint="926">
+
+
+          <div class="__masonry--item">
+      <aside class="promotional-item--VIDEO">
+  <div class="promotional-item--promoted-media">
+                <iframe src="http://www.telemundo.com/sites/nbcutelemundo/modules/custom/tlmd_mpx/images/promo-placeholder.png" frameborder="0" allowfullscreen="" id="pdk-player-promo" data-player-src="//player.theplatform.com/p/0L7ZPC/2Ebwsgm4BTLn/embed/select/809X7Hp_RZuY?siteSectionId=telemundo_homepage_vod&amp;autoPlay=true" data-pdkController="" data-pdkEvents="" width="100%" height="178" class="promotional-item--promoted-video">Your browser does not support iframes.</iframe>
+        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/super-series/la-querida-del-centauro" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">La Querida del Centauro</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/super-series/2016/01/21/andrea-marti-nos-habla-de-su-personaje-bibiana-en-la-querida-del-centauro" class="promotional-item--promoted-title">Andrea Martí interpreta una esposa infiel</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <div class="ad-container ad--MAIN"><div id="boxad"><div data-mps-tag="mosaicadone"></div></div></div>    </div>
+      <div class="__masonry--item">
+      <aside class="promotional-item--MINI4x6">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/shows/2017/05/11/las-noticias-de-la-manana-jueves-11-de-mayo-de-2017" class="ratio-container-4x6"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/promo/video_clip/2017/05/11/vanessa_hauc_0511.jpg?itok=Ty5oTSjd" width="900" height="1350" alt="vanessa_hauc" title="vanessa_hauc" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/promo/video_clip/2017/05/11/vanessa_hauc_0511.jpg?itok=Ty5oTSjd" width="900" height="1350" alt="vanessa_hauc" title="vanessa_hauc" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><span class="promotional-item--show-title-link">Estados Unidos</span></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/shows/2017/05/11/las-noticias-de-la-manana-jueves-11-de-mayo-de-2017" class="promotional-item--promoted-title">Las Noticias de la mañana, jueves 11 de mayo de 2017</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/programa-de-realidad-virtual-propicia-reencuentro-familiar-de-hispanos" class="ratio-container-1x1"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/gallery/2017/05/10/reencuentro_familiar_realidad_virtual.jpg?itok=o4JmN4le" width="900" height="900" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/gallery/2017/05/10/reencuentro_familiar_realidad_virtual.jpg?itok=o4JmN4le" width="900" height="900" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/programa-de-realidad-virtual-propicia-reencuentro-familiar-de-hispanos" class="promotional-item--promoted-title">Programa realidad virtual propicia reencuentro de hispanos</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/madres-mexicanas-marcharon-para-recordar-sus-hijos-desaparecidos" class="ratio-container-1x1"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/gallery/2017/05/10/mexico_mothers_day_protest.jpg?itok=mfmYMPVx" width="900" height="900" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/gallery/2017/05/10/mexico_mothers_day_protest.jpg?itok=mfmYMPVx" width="900" height="900" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/madres-mexicanas-marcharon-para-recordar-sus-hijos-desaparecidos" class="promotional-item--promoted-title">Madres marcharon para recordar a sus hijos desaparecidos</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <div class="ad-container ad--MAIN"><div id="boxad"><div data-mps-tag="mosaicadtwo"></div></div></div>    </div>
+      <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/captan-en-camara-otra-pelea-de-pasajeros-en-avion" class="ratio-container-4x3"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_3/public/images/gallery/2017/05/10/pelea.png?itok=x-UtTCES" width="900" height="675" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_3/public/images/gallery/2017/05/10/pelea.png?itok=x-UtTCES" width="900" height="675" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/captan-en-camara-otra-pelea-de-pasajeros-en-avion" class="promotional-item--promoted-title">Captan en cámara otra pelea de pasajeros en avión</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/texas-discute-ley-para-mantener-ninos-indocumentados-tras-las-rejas" class="ratio-container-16x9"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/gallery/2017/05/10/texas_ninos_indocumentados.jpg?itok=8Txnd7lc" width="900" height="506" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/gallery/2017/05/10/texas_ninos_indocumentados.jpg?itok=8Txnd7lc" width="900" height="506" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/texas-discute-ley-para-mantener-ninos-indocumentados-tras-las-rejas" class="promotional-item--promoted-title">Texas discute ley para niños indocumentados tras las rejas</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI4x6">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/escuelas-de-los-angeles-se-declaran-santuario" class="ratio-container-4x6"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/gallery/2017/05/10/escuelas_santuarios.jpg?itok=hhLukqdx" width="900" height="1350" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/gallery/2017/05/10/escuelas_santuarios.jpg?itok=hhLukqdx" width="900" height="1350" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/escuelas-de-los-angeles-se-declaran-santuario" class="promotional-item--promoted-title">Escuelas de Los Angeles se declaran &quot;santuario&quot;</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/llega-40-el-numero-de-muertos-por-la-represion-en-venezuela" class="ratio-container-1x1"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/gallery/2017/05/10/aptopix_venezuela_political_crisis.jpg?itok=n9cJanRV" width="900" height="900" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/gallery/2017/05/10/aptopix_venezuela_political_crisis.jpg?itok=n9cJanRV" width="900" height="900" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/llega-40-el-numero-de-muertos-por-la-represion-en-venezuela" class="promotional-item--promoted-title">40 el número de muertos por la represión en Venezuela</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/luis-miguel-llega-un-acuerdo-con-su-exmanager" class="ratio-container-16x9"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/gallery/2017/05/10/mexico_luis_miguel.jpg?itok=VglZVvou" width="900" height="506" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/gallery/2017/05/10/mexico_luis_miguel.jpg?itok=VglZVvou" width="900" height="506" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/luis-miguel-llega-un-acuerdo-con-su-exmanager" class="promotional-item--promoted-title">Luis Miguel llega a un acuerdo con su exmánager</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/deportaciones-obligan-los-hijos-asumir-el-rol-de-padres" class="ratio-container-4x3"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_3/public/images/gallery/2017/05/10/deportaciones.jpg?itok=N13MVqhB" width="900" height="675" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_3/public/images/gallery/2017/05/10/deportaciones.jpg?itok=N13MVqhB" width="900" height="675" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/deportaciones-obligan-los-hijos-asumir-el-rol-de-padres" class="promotional-item--promoted-title">Deportaciones obligan a los hijos a asumir el rol de padres</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI4x6">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/graban-agresion-racista-contra-colombianos-en-nueva-jersey" class="ratio-container-4x6"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/gallery/2017/05/10/colombiano_agresion_new_york.jpg?itok=xqT-oahP" width="900" height="1350" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/gallery/2017/05/10/colombiano_agresion_new_york.jpg?itok=xqT-oahP" width="900" height="1350" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/graban-agresion-racista-contra-colombianos-en-nueva-jersey" class="promotional-item--promoted-title">Graban agresión racista contra colombianos en Nueva Jersey</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI4x6">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/10/revuelo-politico-en-washington-tras-despido-del-director-de-fbi" class="ratio-container-4x6"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/sites/nbcutelemundo/files/images/article/2013/07/29/james-comey_137514091583_4.jpg?itok=B0UnfS0M" width="900" height="1350" alt="Los demócratas arremeten contra el director del FBI" title="Los demócratas arremeten contra el director del FBI" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/sites/nbcutelemundo/files/images/article/2013/07/29/james-comey_137514091583_4.jpg?itok=B0UnfS0M" width="900" height="1350" alt="Los demócratas arremeten contra el director del FBI" title="Los demócratas arremeten contra el director del FBI" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/edicion-noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Edición Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/10/revuelo-politico-en-washington-tras-despido-del-director-de-fbi" class="promotional-item--promoted-title">Revuelo político en Washington tras despido del director de FBI</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/mujer-de-hoy/2017/05/10/larissa-waters-amamanto-su-hija-en-plena-sesion-del-parlamento-de-australia" class="ratio-container-16x9"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/mpx/2017/05/10/170510_3517044_Larissa_Waters_amamanto_a_su_hija_en_plena_s.jpg?itok=gvYmOEgD" width="900" height="506" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/mpx/2017/05/10/170510_3517044_Larissa_Waters_amamanto_a_su_hija_en_plena_s.jpg?itok=gvYmOEgD" width="900" height="506" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/mujer-de-hoy/familia" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Familia</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/mujer-de-hoy/2017/05/10/larissa-waters-amamanto-su-hija-en-plena-sesion-del-parlamento-de-australia" class="promotional-item--promoted-title">Larissa Waters amamantó a su hija en plena sesión del Parlamento de Australia</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/entretenimiento/2017/05/10/del-orinal-la-botella-cerveceria-usa-orina-para-hacer-esta-cerveza-video" class="ratio-container-4x3"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_3/public/images/mpx/2017/05/10/170510_3517097_Del_orinal_a_la_botella__cerveceria_usa_orin.jpg?itok=Wwst2fkV" width="900" height="675" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_3/public/images/mpx/2017/05/10/170510_3517097_Del_orinal_a_la_botella__cerveceria_usa_orin.jpg?itok=Wwst2fkV" width="900" height="675" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/entretenimiento/el-pulso-via-mashable" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">#ElPulso vía Mashable</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/entretenimiento/2017/05/10/del-orinal-la-botella-cerveceria-usa-orina-para-hacer-esta-cerveza-video" class="promotional-item--promoted-title">Aprovecharon la orina humana para hacer cerveza</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/entretenimiento/2017/05/09/carmen-villalobos-baila-muy-sexy-el-tema-deja-vu-de-shakira-ft-prince" class="ratio-container-1x1"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/promo/article/2017/05/09/carmen-villalobos-bailando-.jpg?itok=kF8zXgcb" width="900" height="900" alt="Carmen Villalobos baila Deja Vu" title="Carmen Villalobos baila Deja Vu" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/promo/article/2017/05/09/carmen-villalobos-bailando-.jpg?itok=kF8zXgcb" width="900" height="900" alt="Carmen Villalobos baila Deja Vu" title="Carmen Villalobos baila Deja Vu" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/entretenimiento/mvto-en-espanol" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">MVTO en Español</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/entretenimiento/2017/05/09/carmen-villalobos-baila-muy-sexy-el-tema-deja-vu-de-shakira-ft-prince" class="promotional-item--promoted-title">Mira a Carmen Villalobos bailando “Deja Vu”</a></h3>          </div>
+  </div>
+</aside>    </div>
+  
+
+
+
+
+
+
+
+          <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/2017/05/11/trump-dice-que-comey-le-aseguro-que-el-no-era-investigado-en-caso-sobre-rusia-2" class="ratio-container-1x1"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/article/cover/2017/05/11/c_j6jzhwsaeffix.jpg?itok=w3Vto4-N" width="900" height="900" alt="El presidente de EEUU, Donald Trump, habla con Lester Holt de NBC en entrevista exclusiva" title="El presidente de EEUU, Donald Trump, habla con Lester Holt de NBC en entrevista exclusiva" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/article/cover/2017/05/11/c_j6jzhwsaeffix.jpg?itok=w3Vto4-N" width="900" height="900" alt="El presidente de EEUU, Donald Trump, habla con Lester Holt de NBC en entrevista exclusiva" title="El presidente de EEUU, Donald Trump, habla con Lester Holt de NBC en entrevista exclusiva" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/noticias/noticias-telemundo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Noticias Telemundo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/2017/05/11/trump-dice-que-comey-le-aseguro-que-el-no-era-investigado-en-caso-sobre-rusia-2" class="promotional-item--promoted-title">Trump dice que Comey le aseguró que él no era investigado en caso sobre Rusia</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/entretenimiento/2017/05/11/mira-como-celebraron-el-dia-de-las-madres-en-mexico-anahi-salma-hayek-y" class="ratio-container-16x9"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/promo/media_gallery/2017/05/11/anahi-salma-hayek-dia-de-las-madres.jpg?itok=FF7ArVRZ" width="900" height="506" alt="Anahí con su hijo Manuel y Salma Hayek con su hija Paloma" title="Anahí con su hijo Manuel y Salma Hayek con su hija Paloma" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/promo/media_gallery/2017/05/11/anahi-salma-hayek-dia-de-las-madres.jpg?itok=FF7ArVRZ" width="900" height="506" alt="Anahí con su hijo Manuel y Salma Hayek con su hija Paloma" title="Anahí con su hijo Manuel y Salma Hayek con su hija Paloma" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/entretenimiento/mvto-en-espanol" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">MVTO en Español</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/entretenimiento/2017/05/11/mira-como-celebraron-el-dia-de-las-madres-en-mexico-anahi-salma-hayek-y" class="promotional-item--promoted-title">Mira cómo celebraron el Día de las Madres Anahí y más...</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI4x6">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/entretenimiento/2017/05/11/luis-miguel-llego-un-acuerdo-con-exmanager-tras-demanda" class="ratio-container-4x6"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/promo/article/2017/05/11/luismiguel-0511.png?itok=uW5ybv0T" width="900" height="1350" alt="Luis MIguel" title="Luis Miguel" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/promo/article/2017/05/11/luismiguel-0511.png?itok=uW5ybv0T" width="900" height="1350" alt="Luis MIguel" title="Luis Miguel" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/entretenimiento/suelta-la-sopa" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Suelta La Sopa</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/entretenimiento/2017/05/11/luis-miguel-llego-un-acuerdo-con-exmanager-tras-demanda" class="promotional-item--promoted-title">Luis Miguel llegó a un acuerdo con exmánager tras demanda</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/super-series/2017/05/08/la-querida-del-centauro-2-capitulo-6-yolanda-se-va-con-el-dr-lemus-visitar" class="ratio-container-16x9"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/mpx/2017/05/08/170508_3515844_La_Querida_del_Centauro__Capitulo_6___Yoland.jpg?itok=1HMRxGSB" width="900" height="506" alt="Ludwika Paleta En La Querida Del Centauro" title="Ludwika Paleta En La Querida Del Centauro" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/mpx/2017/05/08/170508_3515844_La_Querida_del_Centauro__Capitulo_6___Yoland.jpg?itok=1HMRxGSB" width="900" height="506" alt="Ludwika Paleta En La Querida Del Centauro" title="Ludwika Paleta En La Querida Del Centauro" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/super-series/la-querida-del-centauro" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">La Querida del Centauro</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/super-series/2017/05/08/la-querida-del-centauro-2-capitulo-6-yolanda-se-va-con-el-dr-lemus-visitar" class="promotional-item--promoted-title">Capítulo 6: Yolanda se va con el Dr. Lemus a ver el cadáver del Centauro</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI4x6">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/novelas/2017/05/04/video-oficial-de-tequila-pa-la-razon-la-cancion-interpretada-por-los-bambis-en" class="ratio-container-4x6"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/mpx/2017/05/04/screen-shot-2017-05-03-at-12.47.24-pm.jpg?itok=QSTku-7j" width="900" height="1350" alt="Pedró Capó, Luis Figueroa y Christián Pagán canción Tequila Pa La Razón" title="Pedró Capó, Luis Figueroa y Christián Pagán canción Tequila Pa La Razón" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/mpx/2017/05/04/screen-shot-2017-05-03-at-12.47.24-pm.jpg?itok=QSTku-7j" width="900" height="1350" alt="Pedró Capó, Luis Figueroa y Christián Pagán canción Tequila Pa La Razón" title="Pedró Capó, Luis Figueroa y Christián Pagán canción Tequila Pa La Razón" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/novelas/guerra-de-idolos" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Guerra De Ídolos</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/novelas/2017/05/04/video-oficial-de-tequila-pa-la-razon-la-cancion-interpretada-por-los-bambis-en" class="promotional-item--promoted-title">Tequila Pa’ La Razón la canción interpretada por Los Bambis</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/noticias/yo-decido-2016/como-cumplir-tu-sueno-americano-conoce-las-opciones" class="ratio-container-4x3"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_3/public/images/promo/iframes/2017/02/24/cumple-sueno-americano-dl.jpg?itok=SJgpyUdy" width="900" height="675" alt="Cumple tu sueño americano" title="Cumple tu sueño americano" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_3/public/images/promo/iframes/2017/02/24/cumple-sueno-americano-dl.jpg?itok=SJgpyUdy" width="900" height="675" alt="Cumple tu sueño americano" title="Cumple tu sueño americano" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><span class="promotional-item--show-title-link">YO DECIDO</span></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/noticias/yo-decido-2016/como-cumplir-tu-sueno-americano-conoce-las-opciones" class="promotional-item--promoted-title">Cómo cumplir tu sueño americano. Conoce las opciones.</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/el-poder-en-ti/2017/05/11/gran-noticia-el-desempleo-en-eeuu-alcanza-su-punto-mas-bajo-en-los-ultimos" class="ratio-container-1x1"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/promo/article/2017/05/11/ejecutivo-con-tarjeta-sonriente.jpg?itok=U22TtB9q" width="900" height="900" alt="Ejecutivo con tarjeta sonriente" title="Ejecutivo con tarjeta sonriente" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/promo/article/2017/05/11/ejecutivo-con-tarjeta-sonriente.jpg?itok=U22TtB9q" width="900" height="900" alt="Ejecutivo con tarjeta sonriente" title="Ejecutivo con tarjeta sonriente" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/el-poder-en-ti/tu-dinero" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Tu Dinero</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/el-poder-en-ti/2017/05/11/gran-noticia-el-desempleo-en-eeuu-alcanza-su-punto-mas-bajo-en-los-ultimos" class="promotional-item--promoted-title">El desempleo, en su punto más bajo de la última década</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/super-series/2017/05/10/el-capo-capitulo-26-el-capo-espera-ver-el-cadaver-de-su-hijo" class="ratio-container-16x9"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/mpx/2017/05/10/170510_3517223_El_Capo__Capitulo_26__El_Capo_espera_ver_el_.jpg?itok=9hXxtqth" width="900" height="506" alt="Mauricio Islas, José Vicente, furioso, El Capo" title="Mauricio Islas, José Vicente, molesto, El Capo" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/mpx/2017/05/10/170510_3517223_El_Capo__Capitulo_26__El_Capo_espera_ver_el_.jpg?itok=9hXxtqth" width="900" height="506" alt="Mauricio Islas, José Vicente, furioso, El Capo" title="Mauricio Islas, José Vicente, molesto, El Capo" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/super-series/el-capo" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">El Capo</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/super-series/2017/05/10/el-capo-capitulo-26-el-capo-espera-ver-el-cadaver-de-su-hijo" class="promotional-item--promoted-title">Capítulo 26: El Capo espera ver el cadáver de su hijo</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI4x6">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/entretenimiento/2017/05/10/madonna-posa-desnuda-los-58-anos-de-edad" class="ratio-container-4x6"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/promo/article/2017/05/10/madonna-0510.jpg?itok=KdvMxvSy" width="900" height="1350" alt="Madonna" title="Madonna" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_4_6/public/images/promo/article/2017/05/10/madonna-0510.jpg?itok=KdvMxvSy" width="900" height="1350" alt="Madonna" title="Madonna" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/entretenimiento/suelta-la-sopa" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Suelta La Sopa</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/entretenimiento/2017/05/10/madonna-posa-desnuda-los-58-anos-de-edad" class="promotional-item--promoted-title">Madonna posa desnuda a los 58 años de edad</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/entretenimiento/2017/05/09/mejores-momentos-de-prince-royce-en-instagram-de-lo-sexy-lo-cute-fotos" class="ratio-container-16x9"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/media_gallery_cover/2017/05/09/prince-royce-en-instagram.jpg?itok=Npy9vreh" width="900" height="506" alt="Prince Royce en Instagram" title="Prince Royce en Instagram" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/media_gallery_cover/2017/05/09/prince-royce-en-instagram.jpg?itok=Npy9vreh" width="900" height="506" alt="Prince Royce en Instagram" title="Prince Royce en Instagram" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/entretenimiento/mvto-en-espanol" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">MVTO en Español</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/entretenimiento/2017/05/09/mejores-momentos-de-prince-royce-en-instagram-de-lo-sexy-lo-cute-fotos" class="promotional-item--promoted-title">Prince Royce, de sexy a &quot;cute&quot; en Instagram</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/novelas/2017/05/05/guerra-de-idolos-capitulo-10-mateo-y-manara-se-dejan-llevar-por-la-pasion" class="ratio-container-16x9"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/mpx/2017/05/05/170505_3514585_Guerra_De_Idolos___Capitulo_10__Mateo_y_Mana.jpg?itok=T9nBr_8v" width="900" height="506" alt="María León, Manara, Alberto Guerra, juntos, Guerra de Ídolos" title="María León, Manara, Alberto Guerra, abrazados, Guerra de Ídolos" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9/public/images/mpx/2017/05/05/170505_3514585_Guerra_De_Idolos___Capitulo_10__Mateo_y_Mana.jpg?itok=T9nBr_8v" width="900" height="506" alt="María León, Manara, Alberto Guerra, juntos, Guerra de Ídolos" title="María León, Manara, Alberto Guerra, abrazados, Guerra de Ídolos" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/novelas/guerra-de-idolos" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">Guerra De Ídolos</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/novelas/2017/05/05/guerra-de-idolos-capitulo-10-mateo-y-manara-se-dejan-llevar-por-la-pasion" class="promotional-item--promoted-title">Capítulo 10: Mateo y Manara se dejan llevar por la pasión</a></h3>          </div>
+  </div>
+</aside>    </div>
+        <div class="__masonry--item">
+      <aside class="promotional-item--MINI">
+  <div class="promotional-item--promoted-media">
+                <a href="http://www.telemundo.com/entretenimiento/2017/05/11/luisana-lopilato-comparte-tierna-foto-despues-de-que-su-hijo-noah" class="ratio-container-1x1"><img class="promotional-item--promoted-image" data-original="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/promo/article/2017/05/11/luisana-lopilato-jugando-co.jpg?itok=lkCNg7dD" width="900" height="900" alt="Luisana Lopilato jugando con su hijo Elias" title="Luisana Lopilato jugando con su hijo Elias" /><noscript><img class="promotional-item--promoted-image" src="http://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_1_1/public/images/promo/article/2017/05/11/luisana-lopilato-jugando-co.jpg?itok=lkCNg7dD" width="900" height="900" alt="Luisana Lopilato jugando con su hijo Elias" title="Luisana Lopilato jugando con su hijo Elias" /></noscript></a>        </div>
+  <div class="promotional-item--pane">
+        <div class="promotional-item--meta-info">
+      <h2 class="promotional-item--show-title">
+          <span class="promotional-item--show-name"><a href="http://www.telemundo.com/entretenimiento/mvto-en-espanol" class="promotional-item--show-title-link"><span class="promotional-item--show-title-text">MVTO en Español</span></a></span>
+      </h2>
+    </div>
+        <div class="promotional-item--content">
+      <h3><a href="http://www.telemundo.com/entretenimiento/2017/05/11/luisana-lopilato-comparte-tierna-foto-despues-de-que-su-hijo-noah" class="promotional-item--promoted-title">Luisana Lopilato comparte una tierna foto con su hijo </a></h3>          </div>
+  </div>
+</aside>    </div>
+  
+
+
+
+
+<div class="__masonry--gutter-sizer"></div></div></div>                          <div class="load-more--MAIN" id="load-more-element-0">
+  <a href="http://www.telemundo.com/home?page=1" class="load-more--link views-load-more--link">
+    <span class="load-more--text">Ver Más Contenido</span>
+      <div class="load-more--spinner">
+        <div class="load-more--bounce1"></div>
+        <div class="load-more--bounce2"></div>
+        <div class="load-more--bounce3"></div>
+      </div>
+    <span class="load-more--arrow-icon"></span>
+  </a>
+  <div class="load-more--arrow-wrapper">
+    <div class="load-more--arrow-down"></div>
+  </div>
+</div>              </div>
+        </div>
+    
+          </main>
+      
+
+          </div>
+    <div class= "__hub--content">
+              <div class="__hub--quinary" data-program-state="">
+            
+
+
+<!-- Components: Program-guide,  Type: Main -->
+
+<section class="program-guide--MAIN" >
+<h1 class="program-guide--main-title">Guía de Programación</h1>
+  <div class="program-guide--inner">
+    <div class="program-guide--days">
+      <h2 class="program-guide--title">
+        <span class="program-guide--title-text">Guía de Programación</span>
+      </h2>
+      <ul class="program-guide--days-menu">
+
+      </ul>
+      <a href="http://www.telemundo.com/guia-de-programacion" class="program-guide--program-more">Guía Completa</a>    </div>
+
+    <nav class="program-guide--nav">
+      <a href="#" class="program-guide--nav-prev icon--red-button"><span class="icon--text-fallback">previous</span></a>
+      <a href="#" class="program-guide--nav-next icon--red-button"><span class="icon--text-fallback">next</span></a>
+    </nav>
+
+    <div class="program-guide--program">
+      <div class="program-guide--program-slider">
+        <div class="program-guide--program-slider-inner">
+        </div>
+      </div>
+    </div>
+
+    <div class="program-guide--line"></div>
+  </div>
+  <a href="http://www.telemundo.com/guia-de-programacion" class="program-guide--more-button">Guía Completa</a></section>        </div>
+                  <footer id="footer" class="__hub--footer">
+          
+
+<!-- Components: Footer,  Type: Main -->
+
+<div class="footer--MAIN">
+  <div class="footer--social">
+    <h4 class="footer--section-header">SÍGUENOS</h4>
+    <ul class="footer--social-list">
+      <li class="footer--social-list-item"><a href="https://www.facebook.com/Telemundo" class="icon--facebook footer--social-link" target="_blank"><span class="icon--text-fallback">Facebook</span></a></li>
+      <li class="footer--social-list-item"><a href="https://twitter.com/Telemundo" class="icon--twitter footer--social-link" target="_blank"><span class="icon--text-fallback">Twitter</span></a></li>
+      <li class="footer--social-list-item"><a href="https://instagram.com/Telemundo" class="icon--instagram footer--social-link" target="_blank"><span class="icon--text-fallback">Instagram</span></a></li>
+      <li class="footer--social-list-item"><a href="https://www.youtube.com/user/telemundotv" class="icon--youtube footer--social-link" target="_blank"><span class="icon--text-fallback">Youtube</span></a></li>
+    </ul>
+  </div>
+  <div class="footer--contacts">
+    <h4 class="footer--section-header">CONTÁCTANOS</h4>
+    <ul class="footer--section-list"><li class="footer--section-list-item"><a href="http://www.telemundo.com/contactanos" title="" class="footer--link">Acerca de Telemundo</a></li>
+<li class="footer--section-list-item"><a href="http://www.nbcuni.com/privacy-spanish/" title="" class="footer--link" target="_blank">Política de Privacidad</a></li>
+<li class="footer--section-list-item"><a href="http://www.telemundo.com/legal_terms" title="" class="footer--link">Condiciones de Servicio</a></li>
+<li class="footer--section-list-item"><a href="http://www.nbcumv.com/programming/telemundo" title="" class="footer--link" target="_blank">Información Corporativa</a></li>
+<li class="footer--section-list-item"><a href="https://together.nbcuni.com/segment/hispanic/" title="" class="footer--link" target="_blank">Advertise with Us</a></li>
+<li class="footer--section-list-item"><a href="http://www.telemundo.com/servicios-de-subtitulos-closed-captioning" title="" class="footer--link">Servicios de Subtítulos</a></li>
+<li class="footer--section-list-item"><a href="http://corporate.comcast.com/news-information/nbcuniversal-transaction/independent-programming" title="" class="footer--link" target="_blank">Independent Programming</a></li>
+</ul>  </div>
+  <div class="footer--categories">
+    <h4 class="footer--section-header">CATEGORÍAS</h4>
+    <ul class="footer--section-list"><li class="footer--section-list-item"><a href="http://www.telemundo.com/indice" title="" class="footer--link">Indice</a></li>
+<li class="footer--section-list-item"><a href="http://www.telemundo.com/videos" title="" class="footer--link">Videos</a></li>
+<li class="footer--section-list-item"><a href="http://www.telemundo.com/talentos" title="" class="footer--link">Talentos</a></li>
+<li class="footer--section-list-item"><a href="http://www.telemundo.com/archivo" title="" class="footer--link">Archivo</a></li>
+<li class="footer--section-list-item"><a href="http://www.telemundo.com/telemundo-internacional/telemundo-internacional" title="" class="footer--link">Telemundo Internacional </a></li>
+<li class="footer--section-list-item"><a href="http://www.telemundo.com/estaciones" title="" class="footer--link">Estaciones</a></li>
+<li class="footer--section-list-item"><a href="http://now.telemundo.com/" title="" class="footer--link" target="_blank">Telemundo Now </a></li>
+<li class="footer--section-list-item"><a href="http://telemundo2.viewerlink.tv/?l=SP" title="" class="footer--link lightbox" target="_blank" data-iframe-url="http://telemundo2.viewerlink.tv/?l=SP" data-aux-class="tu-canal--iframe">Encuentra Tu Canal Local</a></li>
+<li class="footer--section-list-item"><a href="http://www.telemundo.com/super-series/la-querida-del-centauro" title="" class="footer--link">La Querida del Centauro 2</a></li>
+</ul>  </div>
+  <div class="footer--logo">
+    <a href="http://www.telemundo.com/" class="footer--site-name">telemundo.com</span></a>
+    <a href="http://www.telemundo.com/" class="footer--logo-image-link">
+      <img class="footer--logo-image" data-original="/sites/nbcutelemundo/themes/aurora_tlmd/images/telemundo_logo.png">
+    </a>
+  </div>
+</div>
+<div class="footer--subfooter">
+  <span class="footer--NBC-network"> A Division of NBCUniversal</span>
+  <span class="footer--Telemundo-network">NBCUniversal Telemundo Enterprises </span>
+    <span class="footer--copyright">Copyright &copy; 2017 Telemundo. Derechos Reservados. El uso de este sitio web significa que accedes a la normativa de confidencialidad y las condiciones de servicio.</span>
+    <span class="footer--ad-choices" id="oba-link-container"></span>
+</div>      </footer>
+          </div>
+
+  </div>
+</div>
+
+<!--
+  -->
+<div class="full-screen-mode--MAIN" id="full-screen-mode--MAIN">
+  <div class="full-screen-mode--close-wrapper">
+    <a href="#" class="full-screen-mode--close">
+      <span class="full-screen-mode--close-text">cerrar</span>
+      <span class="icon--calendar-close full-screen-mode--icon"></span>
+    </a>
+  </div>
+  <div class="full-screen-mode--content">
+  </div>
+</div>
+    <script type="text/javascript">
+  var _sf_async_config=Drupal.settings.chartbeat;
+  (function(){
+    function loadChartbeat() {
+      window._sf_endpt=(new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+         (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
+         "static.chartbeat.com/js/chartbeat.js");
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+       loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script><!-- SiteCatalyst code version: H 25.
+Copyright 1996-2017 Adobe, Inc. -->
+<script type="text/javascript" language="JavaScript">var s_account="nbcutelemundocombu";</script>
+<script type="text/javascript" src="/sites/nbcutelemundo/modules/custom/tlmd_analytics/js/s_code_h25.js?opoy52"></script>
+<script type="text/javascript"><!--
+s.contextData["tlmd.videocat"] = s.getVideoCat(); s.contextData["tlmd.videosubcat"] = s.getVideoSubCat(); s.contextData["tlmd.userAgent"] = navigator.userAgent; s.contextData["tlmd.visitorType"] = s.getNewRepeat(); s.contextData["tve_domain"] = "telemundo.com"; s.contextData["tve_date"]="05/11/2017";s.contextData["tve_day"]="jueves";s.contextData["tve_hour"]="14";s.contextData["tve_minute"]="14:50"; s.contextData["tve_platform"] = jQuery.browser.mobile ? "Mobile" : "PC";if(document.domain.indexOf("nbcuxd.com") > -1 || location.href.indexOf("/now") > -1 || document.domain.indexOf("nbcuni.com") > -1) {  s_account = Drupal.settings.analytics.tveSuiteId;}
+s.linkInternalFilters="javascript:,this-site.com";
+s.contextData["tlmd.division"]="Hispanic Enterprises";
+s.contextData["tlmd.businessUnit"]="Telemundo.com";
+s.contextData["tlmd.publishDate"]="";
+s.contextData["tlmd.publishDay"]="";
+s.contextData["tlmd.publishMonth"]="";
+s.contextData["tlmd.publishYear"]="";
+s.contextData["tve_month"]="mayo";
+s.contextData["tve_year"]="2017";
+s.contextData["tlmd.url"]="http:\/\/telemundo.apps.nbcuni.com\/home";
+s.channel="Mainsite";
+s.contextData["tlmd.showSite"]="Telemundo.com - Homepage";
+s.contextData["tlmd.contentType"]="Main";
+s.contextData["tlmd.userGroup"]="anonymous user";
+s.contextData["tlmd.showFeature"]="Main";
+s.contextData["tlmd.showSubFeature"]="Main";
+s.pageName="Telemundo | Novelas, Shows, Deportes y Entretenimiento";
+s.contextData["tlmd.node"]="";
+s.prop8="Hispanic Enterprises";
+s.prop9="Telemundo.com";
+s.evar45="Telemundo.com";
+s.prop10="Telemundo.com - Homepage";
+s.evar36="";
+s.contextData["tlmd.pageCount"]="true";
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H 25. -->
+<!--[if lte IE 9]><script src="http://www.telemundo.com/sites/nbcutelemundo/themes/aurora_tlmd/js/lib/jquery.xdomainrequirest.min.js"></script><![endif]--><script src="http://cdn.gigya.com/JS/socialize.js?apikey=3_ocZijBB-sCR4BUFdeTyFkP0IjyJgpbGEUemLZ_pcbLQKqjrFWZ1Dvj5FTZbgqWB_">{"enabledProviders":"Facebook, Twitter","lang":"en","sessionExpiration":2000000,"connectWithoutLoginBehavior":"alwaysLogin"}</script><script src="http://www.telemundo.com/sites/nbcutelemundo/files/js/js_GbNBz6H5g1Z_P3bbMcnthRTnUu0cy6QeY4OwKFR3XN4.js"></script>
+<script src="//widget.clipix.com/ScriptWidget.js?version=1.6&amp;counter=on&amp;iconType=61&amp;language=es&amp;shape=horizontal&amp;lightmode=on"></script>
+<script src="//pdk.theplatform.com/current/pdk/tpPdkController.js"></script>
+<script src="http://www.telemundo.com/sites/nbcutelemundo/files/js/js_LYkdJaE1UnD7uIs4OYx3n2902KGJBacNVV-F5ONVi3c.js"></script>
+<script src="http://www.telemundo.com/sites/nbcutelemundo/files/js/js_X5hZzDCdTQ8Va3Fr0jv2hs9F6wrL4BWDhNHPjgjaTzI.js" defer="defer" async="async"></script>
+<script>typeof(mps)=='object' && typeof(mps.writeFooter)=='function' && mps.writeFooter();</script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"a9ef268b0b","applicationID":"13459655","transactionName":"NFUBZBBVVkNUBkRYWw0fIlMWXVdeGhVRVlE8XQJeA1NdQmoVUVZRPFUbVQFBTFU=","queueTime":0,"applicationTime":524,"atts":"GBICElhPRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
